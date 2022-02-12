@@ -423,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223888110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 37.72852, y: 37.72852, z: 37.72852}
   m_Children: []
   m_Father: {fileID: 0}
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeX: 50
   sizeZ: 50
-  scale: 2
+  scale: 3
   groundGradient:
     serializedVersion: 2
     key0: {r: 0.9846988, g: 1, b: 0, a: 1}
@@ -473,8 +473,8 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 21588
-    ctime1: 46260
+    ctime0: 46260
+    ctime1: 57825
     ctime2: 0
     ctime3: 0
     ctime4: 0

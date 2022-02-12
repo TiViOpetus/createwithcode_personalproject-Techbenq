@@ -19,6 +19,7 @@ public class WorldGeneration : MonoBehaviour
     private Color[] vertexColors;
     private void Start()
     {
+        seed = Random.Range(1, 99999);
         CreateMesh();
         UpdateMesh();
     }
@@ -91,17 +92,10 @@ public class WorldGeneration : MonoBehaviour
 
         float calculated = Mathf.PerlinNoise(xCoord, zCoord);
 
-        if (calculated < 0.2f)
-            calculated = 0f;
-
-        else if (calculated < 0.3f)
-            calculated = 0.25f;
-
-        else if (calculated < 0.4f)
-            calculated = 0.4f;
-
-        else
+        if (calculated > 0.45f)
+        {
             calculated = 1;
+        }
 
         return calculated;
     }
