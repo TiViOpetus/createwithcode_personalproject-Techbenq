@@ -7,12 +7,16 @@ public class WorldGeneration : MonoBehaviour
     public int sizeX, sizeZ;
     public float scale;
 
+    public Gradient groundGradient;
+
     private Mesh mesh;
 
     private int seed = 1;
 
     private Vector3[] vertices;
     private int[] triangles;
+
+    private Color[] vertexColors;
     private void Start()
     {
         CreateMesh();
@@ -24,9 +28,10 @@ public class WorldGeneration : MonoBehaviour
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        int i = 0;
 
         vertices = new Vector3[(sizeX + 1) * (sizeZ + 1)];
-        for(int x = 0, i = 0; x <= sizeX; x++)
+        for(int x = 0; x <= sizeX; x++)
         {
             for(int z = 0; z <= sizeZ; z++)
             {
@@ -41,9 +46,10 @@ public class WorldGeneration : MonoBehaviour
                 i++;
             }
         }
+        i = 0;
 
         triangles = new int[sizeX * sizeZ  * 6];
-        for(int z = 0, i = 0, vert = 0; z < sizeZ; z++)
+        for(int z = 0, vert = 0; z < sizeZ; z++)
         {
             for(int x = 0; x < sizeX; x++)
             {
@@ -58,6 +64,14 @@ public class WorldGeneration : MonoBehaviour
             }
             vert++;
         }
+        i = 0;
+
+        vertexColors = new Color[vertices.Length];
+        foreach(Vector3 vert in vertices)
+        {
+            vertexColors[i] = groundGradient.Evaluate(Mathf.Lerp(0, 1, vert.y));
+            i++;
+        }
     }
 
     //Updates the mesh
@@ -65,6 +79,7 @@ public class WorldGeneration : MonoBehaviour
     {
         mesh.vertices = vertices;
         mesh.triangles = triangles;
+        mesh.colors = vertexColors;
         mesh.RecalculateNormals();
     }
 
@@ -76,11 +91,14 @@ public class WorldGeneration : MonoBehaviour
 
         float calculated = Mathf.PerlinNoise(xCoord, zCoord);
 
-        if (calculated < 0.3f)
-            calculated = -1f;
+        if (calculated < 0.2f)
+            calculated = 0f;
+
+        else if (calculated < 0.3f)
+            calculated = 0.25f;
 
         else if (calculated < 0.4f)
-            calculated = -0.5f;
+            calculated = 0.4f;
 
         else
             calculated = 1;
