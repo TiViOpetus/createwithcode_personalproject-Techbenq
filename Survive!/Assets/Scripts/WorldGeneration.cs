@@ -16,9 +16,10 @@ public class WorldGeneration : MonoBehaviour
     private void Start()
     {
         CreateMesh();
-        SetMesh();
+        UpdateMesh();
     }
 
+    //Creates vertices and triangles for the mesh
     private void CreateMesh()
     {
         mesh = new Mesh();
@@ -29,7 +30,13 @@ public class WorldGeneration : MonoBehaviour
         {
             for(int z = 0; z <= sizeZ; z++)
             {
-                Vector3 vertPos = new Vector3(x, GetHeight(x,z), z);
+                float y;
+                if (z == 0 || x == 0 || z == sizeZ || x == sizeX)
+                    y = -1f;
+                else
+                    y = GetHeight(x, z);
+
+                Vector3 vertPos = new Vector3(x, y, z);
                 vertices[i] = vertPos;
                 i++;
             }
@@ -53,18 +60,31 @@ public class WorldGeneration : MonoBehaviour
         }
     }
 
-    private void SetMesh()
+    //Updates the mesh
+    private void UpdateMesh()
     {
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
     }
+
+    //Gets height for the vertice using perlin noise map
     private float GetHeight(int x, int z)
     {
         float xCoord = (float)x / sizeX * scale + seed;
         float zCoord = (float)z / sizeZ * scale + seed;
 
         float calculated = Mathf.PerlinNoise(xCoord, zCoord);
+
+        if (calculated < 0.3f)
+            calculated = -1f;
+
+        else if (calculated < 0.4f)
+            calculated = -0.5f;
+
+        else
+            calculated = 1;
+
         return calculated;
     }
 }
