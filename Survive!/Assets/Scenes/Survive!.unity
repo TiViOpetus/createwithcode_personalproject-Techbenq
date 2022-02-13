@@ -346,15 +346,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8162205822880212685, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 77.23
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 8162205822880212685, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.034
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8162205822880212685, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.24
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8162205822880212685, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -408,6 +408,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4.53566
   m_Center: {x: 0.050615657, y: 0, z: 0.12393341}
+--- !u!4 &1801229104 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8162205822880212685, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+  m_PrefabInstance: {fileID: 1682263646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2027997534
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +447,7 @@ MonoBehaviour:
   sizeX: 100
   sizeZ: 100
   scale: 3
+  campfire: {fileID: 1801229104}
   prefabs:
   - {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
   - {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874, type: 3}

@@ -7,6 +7,7 @@ public class WorldGeneration : MonoBehaviour
     public int sizeX, sizeZ;
     public float scale;
 
+    public Transform campfire;
     public GameObject[] prefabs;
     public float[] spawnChances;
 
@@ -17,8 +18,10 @@ public class WorldGeneration : MonoBehaviour
     private int seed = 1;
 
     private Vector3[] vertices;
-    private List<Vector3> availableVerts = new List<Vector3>();
     private int[] triangles;
+
+    private List<Vector3> availableVerts = new List<Vector3>();
+    private List<Vector3> campVerts = new List<Vector3>();
 
     private Color[] vertexColors;
     private void Start()
@@ -37,12 +40,22 @@ public class WorldGeneration : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
         int i = 0;
 
+        //adds the vertices near the campfire
+        for(int x = (int)campfire.position.x - 3; x < (int)campfire.position.x + 3; x++)
+        {
+            for (int z = (int)campfire.position.z - 3; z < (int)campfire.position.z + 3; z++)
+            {
+                campVerts.Add(new Vector3(x, 1, z));
+            }
+        }
+
         vertices = new Vector3[(sizeX + 1) * (sizeZ + 1)];
         for(int x = 0; x <= sizeX; x++)
         {
             for(int z = 0; z <= sizeZ; z++)
             {
                 float y;
+
                 if (z == 0 || x == 0 || z == sizeZ || x == sizeX)
                     y = -1f;
                 else
@@ -87,6 +100,7 @@ public class WorldGeneration : MonoBehaviour
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.colors = vertexColors;
+
         gameObject.AddComponent<MeshCollider>();
         mesh.RecalculateNormals();
     }
@@ -110,36 +124,43 @@ public class WorldGeneration : MonoBehaviour
     //Adds objects to the world using chances
     private void AddObjects(GameObject[] objs, float[] chances)
     {
+        //List of vertices where objects can spawn
         foreach(Vector3 vert in vertices)
             if(vert.y >= 1)
                 availableVerts.Add(vert);
 
+        //Removes the vertices near the campfire
+        foreach (Vector3 vert in campVerts)
+            availableVerts.Remove(vert);
+
         for(int i = 0; i < objs.Length; i++)
         {
-            List<Vector3> removeVerts = new List<Vector3>();
+            List<Vector3> usedVerts = new List<Vector3>();
+
             foreach (Vector3 vert in availableVerts)
             {
                 if (vert.y >= 1)
                 {
                     float random = Random.Range(0, 100);
-                    //Take out most possibilities
+
                     if (random % 2 == 0)
                     {
                         if (random < chances[i])
                         {
-                            Vector3 pos = new Vector3(vert.x, vert.y, vert.z);
-                            GameObject temp = Instantiate(objs[i], pos,objs[i].transform.rotation);
+                            Vector3 pos = vert;
+                            GameObject temp = Instantiate(objs[i], pos, objs[i].transform.rotation);
 
                             float size = Random.Range(temp.transform.localScale.x - 0.15f, temp.transform.localScale.x + 0.2f);
                             temp.transform.localScale = new Vector3(size, size, size);
                             temp.transform.Rotate(Vector3.up, Random.Range(0, 360));
 
-                            removeVerts.Add(vert);
+                            usedVerts.Add(vert);
                         }
                     }
                 }
             }
-            foreach (Vector3 vert in removeVerts)
+            //remove used verts from being used again
+            foreach (Vector3 vert in usedVerts)
                 availableVerts.Remove(vert);
         }
     }
