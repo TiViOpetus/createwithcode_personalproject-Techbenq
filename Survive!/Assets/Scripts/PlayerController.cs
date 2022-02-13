@@ -8,10 +8,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     private CharacterController controller;
-    private float horizontal, vertical;
+    private float horizontal, vertical, mouseX, turnSpeed;
 
     private Animator anim;
-
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -43,9 +42,16 @@ public class PlayerController : MonoBehaviour
             controller.Move(transform.forward * vertical * Time.deltaTime * speed / 1.5f);
         }
     }
+
+    // Turns the player with mouse smoothly
     private void LateUpdate()
     {
-        horizontal = Input.GetAxis("Mouse X");
-        transform.Rotate(Vector3.up, horizontal);
+        mouseX += Input.GetAxis("Mouse X");
+        Quaternion turn = Quaternion.Euler(0, mouseX, 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, turn, 4 * Time.deltaTime);
+
+        turnSpeed = Mathf.Lerp(turnSpeed, Input.GetAxis("Mouse X"), 2 * Time.deltaTime);
+        turnSpeed = Mathf.Clamp(turnSpeed, -1, 1);
+        anim.SetFloat("TurnSpeed", turnSpeed);
     }
 }
