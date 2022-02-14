@@ -89,7 +89,7 @@ public class WorldGeneration : MonoBehaviour
         vertexColors = new Color[vertices.Length];
         foreach(Vector3 vert in vertices)
         {
-            vertexColors[i] = groundGradient.Evaluate(Mathf.Lerp(0, 1, vert.y));
+            vertexColors[i] = groundGradient.Evaluate(vert.y);
             i++;
         }
     }

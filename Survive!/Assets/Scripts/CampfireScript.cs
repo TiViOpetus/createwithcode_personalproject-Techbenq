@@ -42,19 +42,22 @@ public class CampfireScript : MonoBehaviour
         burningSticks -= 1;
         if(burningSticks <= 0)
         {
+            CancelInvoke();
             Debug.Log("Game Over!");
         }
         UpdateCamp();
     }
 
     //Adds a stick
-    public void AddStick()
+    public bool AddStick()
     {
         if (burningSticks >= maxSticks)
-            return;
+            return false;
 
         burningSticks += 1;
         UpdateCamp();
+
+        return true;
     }
 
     //Updates the campfire
@@ -76,8 +79,6 @@ public class CampfireScript : MonoBehaviour
         campfireLight.innerSpotAngle = Mathf.Clamp(maxInner * procent, minInner, maxInner);
 
         if (burningSticks == 0)
-        {
             campfireLight.intensity = 0;
-        }
     }
 }
