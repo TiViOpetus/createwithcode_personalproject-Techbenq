@@ -82,8 +82,8 @@ public class PlayerController : MonoBehaviour
         {
             for (int i = 0; i < 10; i++)
             {
-                controller.Move(-transform.forward * Time.deltaTime * dodgeSpeed);
-                controller.Move(transform.right * Time.deltaTime * dodgeSpeed * direction);
+                controller.Move(-transform.forward * dodgeSpeed);
+                controller.Move(transform.right * dodgeSpeed * direction);
                 yield return new WaitForSeconds(0.01f);
             }
 
