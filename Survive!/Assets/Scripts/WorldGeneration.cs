@@ -8,9 +8,9 @@ public class WorldGeneration : MonoBehaviour
     public float scale;
 
     public Transform campfire;
-    public GameObject[] prefabs;
-    public float[] spawnChances;
     public Transform parent;
+
+    public Prefab[] prefabs;
 
     public Gradient groundGradient;
     private Mesh mesh;
@@ -19,16 +19,15 @@ public class WorldGeneration : MonoBehaviour
 
     private Vector3[] vertices;
     private int[] triangles;
+    private Color[] vertexColors;
 
     private List<Vector3> availableVerts = new List<Vector3>();
-
-    private Color[] vertexColors;
     private void Start()
     {
         //seed = Random.Range(1, 99999);
         CreateMesh();
         UpdateMesh();
-        AddObjects(prefabs, spawnChances);
+        AddObjects(prefabs);
         Destroy(this);
     }
 
@@ -112,7 +111,7 @@ public class WorldGeneration : MonoBehaviour
     }
 
     //Adds objects to the world using chances
-    private void AddObjects(GameObject[] objs, float[] chances)
+    private void AddObjects(Prefab[] objs)
     {
         //List of vertices where objects can spawn
         foreach (Vector3 vert in vertices)
@@ -141,13 +140,14 @@ public class WorldGeneration : MonoBehaviour
 
                     if (random % 2 == 0)
                     {
-                        if (random < chances[i])
+                        if (random < objs[i].spawnChance)
                         {
                             Vector3 pos = vert;
-                            GameObject temp = Instantiate(objs[i], pos, objs[i].transform.rotation,parent);
+                            GameObject temp = Instantiate(objs[i].prefab, pos, objs[i].prefab.transform.rotation, parent);
 
-                            float size = Random.Range(temp.transform.localScale.x - 0.15f, temp.transform.localScale.x + 0.2f);
+                            float size = Random.Range(temp.transform.localScale.x - 0.15f, temp.transform.localScale.x + 0.25f);
                             temp.transform.localScale = new Vector3(size, size, size);
+
                             temp.transform.Rotate(Vector3.up, Random.Range(0, 360));
                             temp.isStatic = true;
 
@@ -161,4 +161,11 @@ public class WorldGeneration : MonoBehaviour
                 availableVerts.Remove(vert);
         }
     }
+}
+
+[System.Serializable]
+public class Prefab
+{
+    public GameObject prefab;
+    public float spawnChance;
 }

@@ -75,7 +75,7 @@ public class CampfireScript : MonoBehaviour
 
         float procent = (float)burningSticks / (float)maxSticks;
 
-        campfireLight.spotAngle = Mathf.Clamp(maxOuter * procent, minOuter, maxOuter);
+        campfireLight.spotAngle = Mathf.Clamp(maxOuter * procent * 1.25f, minOuter, maxOuter);
         campfireLight.innerSpotAngle = Mathf.Clamp(maxInner * procent, minInner, maxInner);
 
         if (burningSticks == 0)

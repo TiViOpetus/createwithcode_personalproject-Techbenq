@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float dodgeSpeed;
 
+    public BoxCollider interactBox;
+
     private CharacterController controller;
     private float horizontal, vertical, mouseX, turnSpeed;
 
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -54,9 +58,14 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetFloat("Dodge", 1);
                 canMove = false;
-            } 
-        }
+            }
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if(SelectObject.current != null)
+                    SelectObject.current.Interact();
+            }
+        }
     }
 
     // Turns the player with mouse smoothly

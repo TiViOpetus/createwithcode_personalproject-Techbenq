@@ -6,11 +6,20 @@ public class DayNightCycle : MonoBehaviour
 {
     public bool isDay = true;
     public float rotateSpeed;
+    public float dayLength;
 
-    private float currentTime = 0;
+    private float currentTime;
+    private float dayProcent;
     private void Update()
     {
-        transform.Rotate(Vector3.right * rotateSpeed * Time.deltaTime);
-        Debug.Log(transform.rotation.x);
+        currentTime += Time.deltaTime * rotateSpeed;
+        currentTime %= dayLength;
+        dayProcent = currentTime / dayLength;
+
+        if (dayProcent > 0.5f)
+            isDay = false;
+        else isDay = true;
+
+        transform.eulerAngles = new Vector3(360 * dayProcent, 0);
     }
 }
