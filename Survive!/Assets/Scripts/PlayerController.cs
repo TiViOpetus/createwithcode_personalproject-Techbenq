@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float dodgeSpeed;
 
-    public BoxCollider interactBox;
-
     private CharacterController controller;
     private float horizontal, vertical, mouseX, turnSpeed;
 
@@ -38,14 +36,25 @@ public class PlayerController : MonoBehaviour
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
 
-            anim.SetFloat("SideMoveSpeed", horizontal);
+            anim.SetFloat("SideSpeed", horizontal);
             anim.SetFloat("MovementSpeed", vertical);
 
-            if (horizontal != 0)
+            if(horizontal != 0 && vertical > 0)
+            {
+                controller.Move(transform.right * horizontal * Time.deltaTime * speed);
+                controller.Move(transform.forward * vertical * Time.deltaTime * speed);
+            }
+            else if(horizontal != 0 && vertical < 0)
+            {
+                controller.Move(transform.right * horizontal * Time.deltaTime * speed / 1.5f);
+                controller.Move(transform.forward * vertical * Time.deltaTime * speed / 1.5f);
+            }
+
+            else if (horizontal != 0)
             {
                 controller.Move(transform.right * horizontal * Time.deltaTime * speed / 1.5f);
             }
-            if (vertical > 0)
+            else if (vertical > 0)
             {
                 controller.Move(transform.forward * vertical * Time.deltaTime * speed);
             }
@@ -64,10 +73,6 @@ public class PlayerController : MonoBehaviour
             {
                 if(SelectObject.current != null)
                     SelectObject.current.Interact();
-            }
-            if (Input.GetMouseButtonDown(0))
-            {
-                anim.SetBool("Punch", true);
             }
         }
     }
@@ -95,13 +100,22 @@ public class PlayerController : MonoBehaviour
         {
             for (int i = 0; i < 10; i++)
             {
-                controller.Move(-transform.forward * dodgeSpeed);
-                controller.Move(transform.right * dodgeSpeed * direction);
+                if(direction != 0)
+                {
+                    controller.Move(transform.right * dodgeSpeed * direction);
+                }
+                else
+                    controller.Move(-transform.forward * dodgeSpeed);
                 yield return new WaitForSeconds(0.01f);
             }
 
-            anim.SetFloat("Dodge", 0);
-            canMove = true;
+            AllowMovement();
         }
+    }
+
+    public void AllowMovement()
+    {
+        canMove = true;
+        anim.SetFloat("Dodge", 0);
     }
 }
