@@ -65,6 +65,10 @@ public class PlayerController : MonoBehaviour
                 if(SelectObject.current != null)
                     SelectObject.current.Interact();
             }
+            if (Input.GetMouseButtonDown(0))
+            {
+                anim.SetBool("Punch", true);
+            }
         }
     }
 

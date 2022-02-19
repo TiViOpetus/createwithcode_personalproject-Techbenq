@@ -28,7 +28,6 @@ public class DayNightCycle : MonoBehaviour
             isDay = false;
         else isDay = true;
 
-        Debug.Log(dayProcent);
         transform.eulerAngles = new Vector3(360 * dayProcent, 0);
         UpdateLightning();
     }
