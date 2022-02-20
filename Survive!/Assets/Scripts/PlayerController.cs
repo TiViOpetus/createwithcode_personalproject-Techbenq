@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             {
                 controller.Move(transform.right * horizontal * Time.deltaTime * speed);
             }
-            if (vertical > 0)
+            if (vertical != 0)
             {
                 controller.Move(transform.forward * vertical * Time.deltaTime * speed);
             }
