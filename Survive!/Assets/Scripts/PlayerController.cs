@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                anim.SetFloat("Dodge", 1);
+                anim.SetTrigger("Dodge");
                 canMove = false;
             }
 
@@ -59,6 +59,12 @@ public class PlayerController : MonoBehaviour
                 if(SelectObject.current != null)
                     SelectObject.current.Interact();
             }
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("Punch");
+            canMove = false;
         }
     }
 
@@ -93,14 +99,11 @@ public class PlayerController : MonoBehaviour
                     controller.Move(-transform.forward * dodgeSpeed);
                 yield return new WaitForSeconds(0.01f);
             }
-
-            AllowMovement();
         }
     }
 
     public void AllowMovement()
     {
         canMove = true;
-        anim.SetFloat("Dodge", 0);
     }
 }
