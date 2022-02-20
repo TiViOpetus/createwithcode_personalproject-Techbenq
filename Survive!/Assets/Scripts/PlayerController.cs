@@ -39,28 +39,13 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("SideSpeed", horizontal);
             anim.SetFloat("MovementSpeed", vertical);
 
-            if(horizontal != 0 && vertical > 0)
+            if (horizontal != 0)
             {
                 controller.Move(transform.right * horizontal * Time.deltaTime * speed);
-                controller.Move(transform.forward * vertical * Time.deltaTime * speed);
             }
-            else if(horizontal != 0 && vertical < 0)
-            {
-                controller.Move(transform.right * horizontal * Time.deltaTime * speed / 1.75f);
-                controller.Move(transform.forward * vertical * Time.deltaTime * speed / 1.75f);
-            }
-
-            else if (horizontal != 0)
-            {
-                controller.Move(transform.right * horizontal * Time.deltaTime * speed / 1.5f);
-            }
-            else if (vertical > 0)
+            if (vertical > 0)
             {
                 controller.Move(transform.forward * vertical * Time.deltaTime * speed);
-            }
-            else if (vertical < 0)
-            {
-                controller.Move(transform.forward * vertical * Time.deltaTime * speed / 1.5f);
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
