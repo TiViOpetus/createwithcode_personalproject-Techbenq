@@ -46,8 +46,8 @@ public class PlayerController : MonoBehaviour
             }
             else if(horizontal != 0 && vertical < 0)
             {
-                controller.Move(transform.right * horizontal * Time.deltaTime * speed / 1.5f);
-                controller.Move(transform.forward * vertical * Time.deltaTime * speed / 1.5f);
+                controller.Move(transform.right * horizontal * Time.deltaTime * speed / 1.75f);
+                controller.Move(transform.forward * vertical * Time.deltaTime * speed / 1.75f);
             }
 
             else if (horizontal != 0)
