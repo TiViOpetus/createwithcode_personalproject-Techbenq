@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
 {
+    public static bool isDay = true;
+
     public Gradient ambient, fog, directional;
-    public bool isDay = true;
+
     public float rotateSpeed;
     public float dayLength;
 

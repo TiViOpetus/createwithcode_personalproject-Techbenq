@@ -215,6 +215,7 @@ Transform:
   - {fileID: 1341753941735585047}
   - {fileID: 1035334313760141939}
   - {fileID: 2115661677}
+  - {fileID: 3228945048334855086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -229,13 +230,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 10.87
+  m_Height: 10.31
   m_Radius: 1.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 5.5, z: 0}
+  m_Center: {x: 0, y: 5.68, z: 0}
 --- !u!114 &5197088323486366243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.25
   dodgeSpeed: 0.1
-  interactBox: {fileID: 1035334313760141938}
 --- !u!65 &308851755572240103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -262,8 +262,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9482949, y: 11.012561, z: 1.3068291}
-  m_Center: {x: -0.027886024, y: 5.564083, z: -0.06973025}
+  m_Size: {x: 1.9482949, y: 9.842429, z: 1.3068291}
+  m_Center: {x: -0.027886024, y: 5.8149343, z: -0.06973025}
 --- !u!95 &919132149548033720
 Animator:
   serializedVersion: 3
@@ -479,6 +479,7 @@ GameObject:
   - component: {fileID: 1035334313760141939}
   - component: {fileID: 1035334313760141938}
   - component: {fileID: 2113284564}
+  - component: {fileID: 2113284565}
   m_Layer: 7
   m_Name: InteractableBox
   m_TagString: Untagged
@@ -526,6 +527,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSpeed: 1
+--- !u!54 &2113284565
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035334313760141936}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1411994877459296781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1162,67 @@ Transform:
   m_Father: {fileID: 1105031784030461965}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4616862472226974741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3228945048334855086}
+  - component: {fileID: 4476490313268472042}
+  - component: {fileID: 2478129971266979309}
+  m_Layer: 9
+  m_Name: CombatBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3228945048334855086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616862472226974741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.51, z: 1.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 994045995630712713}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4476490313268472042
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616862472226974741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8515189, y: 10.8711, z: 2.1440926}
+  m_Center: {x: -0.026632806, y: 4.9355474, z: 0.57204545}
+--- !u!54 &2478129971266979309
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616862472226974741}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4685119460918797044
 GameObject:
   m_ObjectHideFlags: 0

@@ -160,6 +160,7 @@ public class WorldGeneration : MonoBehaviour
             foreach (Vector3 vert in usedVerts)
                 availableVerts.Remove(vert);
         }
+        EnemySpawner.spawnLocations = availableVerts;
     }
 }
 
