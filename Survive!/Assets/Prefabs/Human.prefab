@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115661676}
-  m_LocalRotation: {x: 0.109350614, y: -0, z: -0, w: 0.9940033}
-  m_LocalPosition: {x: 0, y: 13.71, z: -15.87}
+  m_LocalRotation: {x: 0.28426605, y: -0, z: -0, w: 0.9587455}
+  m_LocalPosition: {x: 0, y: 16.74, z: -11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 994045995630712713}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 12.556, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 33.03, y: 0, z: 0}
 --- !u!20 &2115661680
 Camera:
   m_ObjectHideFlags: 0
@@ -191,11 +191,12 @@ GameObject:
   - component: {fileID: 994045995630712713}
   - component: {fileID: 2642333294509117519}
   - component: {fileID: 5197088323486366243}
+  - component: {fileID: 7780316115615228435}
   - component: {fileID: 308851755572240103}
   - component: {fileID: 919132149548033720}
   m_Layer: 0
   m_Name: Human
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,8 +214,8 @@ Transform:
   m_Children:
   - {fileID: 4727615622139721501}
   - {fileID: 1341753941735585047}
-  - {fileID: 1035334313760141939}
   - {fileID: 2115661677}
+  - {fileID: 1035334313760141939}
   - {fileID: 3228945048334855086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -251,6 +252,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.25
   dodgeSpeed: 0.1
+--- !u!114 &7780316115615228435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468479074181287219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c453cbcc499d6fd43b502d656a4df605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
 --- !u!65 &308851755572240103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -499,7 +513,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 994045995630712713}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1035334313760141938
 BoxCollider:
@@ -1173,7 +1187,8 @@ GameObject:
   - component: {fileID: 3228945048334855086}
   - component: {fileID: 4476490313268472042}
   - component: {fileID: 2478129971266979309}
-  m_Layer: 9
+  - component: {fileID: 1085129682158623681}
+  m_Layer: 0
   m_Name: CombatBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,8 +1220,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8515189, y: 10.8711, z: 2.1440926}
-  m_Center: {x: -0.026632806, y: 4.9355474, z: 0.57204545}
+  m_Size: {x: 1.8515189, y: 5.137513, z: 2.1741822}
+  m_Center: {x: -0.02663284, y: 7.4621515, z: 2.9226906}
 --- !u!54 &2478129971266979309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1223,6 +1238,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1085129682158623681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616862472226974741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f31dbeafbde0df49b28bf9b757a85f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 5
 --- !u!1 &4685119460918797044
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public static List<Vector3> spawnLocations;
+    public static int enemyCount;
+
     public int maxEnemies;
     public int spawnDelay;
-
-    public int enemyCount;
 
     public GameObject enemyPrefab;
 
@@ -26,7 +26,6 @@ public class EnemySpawner : MonoBehaviour
                 int randomPos = Random.Range(0, spawnLocations.Count - 1);
 
                 Instantiate(enemyPrefab, spawnLocations[randomPos], enemyPrefab.transform.rotation);
-
                 enemyCount += 1;
             }
         }
