@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PickUp : Interactable
 {
+    public Item item;
     public override void Interact()
     {
         base.Interact();
-        Destroy(gameObject);
+        if(InventoryManager.instance.AddItem(item))
+            Destroy(gameObject);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public Item item;
     public float speed;
     public float dodgeSpeed;
 
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    private int slotNum;
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -60,12 +62,19 @@ public class PlayerController : MonoBehaviour
                     SelectObject.current.Interact();
             }
         }
-
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            slotNum = Mathf.Clamp(slotNum - (int)Input.mouseScrollDelta.y, 0, 8);
+            InventoryManager.instance.SetActiveSlot(slotNum);
+        }
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("Punch");
             canMove = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+            InventoryManager.instance.RemoveItems(item, 1);
     }
 
     // Turns the player with mouse smoothly

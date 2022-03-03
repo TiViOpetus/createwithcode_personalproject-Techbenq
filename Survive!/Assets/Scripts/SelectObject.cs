@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class SelectObject : MonoBehaviour
 {
+    public Material simpleNatureMat;
     public float changeSpeed;
 
     public static Interactable current;
     private Material currentMat;
 
     private Color ogColor;
-    private float currentCol;
 
     private bool brighter = true;
 
+    private int maxBrightness;
     private void OnTriggerStay(Collider other)
     {
         if (current == null)
@@ -21,7 +22,9 @@ public class SelectObject : MonoBehaviour
             current = other.GetComponent<Interactable>();
             currentMat = other.gameObject.GetComponent<MeshRenderer>().material;
             ogColor = currentMat.color;
-            currentCol = ogColor.b;
+
+            if (currentMat == simpleNatureMat) maxBrightness = 6;
+            else maxBrightness = 1;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -40,15 +43,13 @@ public class SelectObject : MonoBehaviour
             //Make object go brighter then darker 
             if (brighter)
             {
-                currentCol = Mathf.Lerp(currentCol, 6, changeSpeed * Time.deltaTime);
-                currentMat.color = new Color(currentCol,currentCol,currentCol);
-                if (currentMat.color.b >= 5 && currentMat.color.r >= 5) brighter = false;
+                currentMat.color = Color.Lerp(currentMat.color, Color.white * maxBrightness, changeSpeed * Time.deltaTime);
+                if (currentMat.color.b >= 0.8f * maxBrightness ) brighter = false;
             }
             else
             {
-                currentCol = Mathf.Lerp(currentCol, 0, changeSpeed * Time.deltaTime);
-                currentMat.color = new Color(currentCol, currentCol, currentCol);
-                if (currentMat.color.b <= 2 && currentMat.color.r <= 2) brighter = true;
+                currentMat.color = Color.Lerp(currentMat.color, Color.black, changeSpeed * Time.deltaTime);
+                if (currentMat.color.b <= 0.2) brighter = true;
             }
         }
     }

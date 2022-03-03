@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CampfireScript : MonoBehaviour
+public class CampfireScript : Interactable
 {
+    public Item stickItem;
     public GameObject[] sticks;
     public float burnDelay;
 
@@ -34,6 +35,17 @@ public class CampfireScript : MonoBehaviour
 
         UpdateCamp();
         InvokeRepeating("BurnStick", burnDelay * 2, burnDelay);
+    }
+
+    public override void Interact()
+    {
+        base.Interact();
+        if (burningSticks >= maxSticks) return;
+        if(InventoryManager.instance.activeSlot.slotItem == stickItem)
+        {
+            AddStick();
+            InventoryManager.instance.activeSlot.RemoveItem(stickItem,1);
+        }
     }
 
     //Removes a stick if none left game over
