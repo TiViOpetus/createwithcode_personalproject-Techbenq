@@ -5,9 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public Item item;
     public float speed;
-    public float dodgeSpeed;
 
     private CharacterController controller;
     private float horizontal, vertical, mouseX, turnSpeed;
@@ -70,9 +68,6 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Punch");
             canMove = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-            InventoryManager.instance.RemoveItems(item, 1);
     }
 
     // Turns the player with mouse smoothly
