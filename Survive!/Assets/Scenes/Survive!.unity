@@ -3622,6 +3622,10 @@ PrefabInstance:
       propertyPath: staminaSlid
       value: 
       objectReference: {fileID: 575531145}
+    - target: {fileID: 308851755572240103, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 468479074181287219, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: m_Name
       value: Human

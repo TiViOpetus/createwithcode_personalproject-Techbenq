@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                anim.applyRootMotion = true;
                 anim.SetTrigger("Dodge");
                 canMove = false;
             }
@@ -91,29 +92,9 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("TurnSpeed", turnSpeed);
     }
 
-    //Function animation calls direction being -1,0,1
-    public void Dodge(float direction)
-    {
-        StartCoroutine(RealDodge());
-
-        //function where dodge is made smoothly
-        IEnumerator RealDodge()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                if(direction != 0)
-                {
-                    controller.Move(transform.right * dodgeSpeed * direction);
-                }
-                else
-                    controller.Move(-transform.forward * dodgeSpeed);
-                yield return new WaitForSeconds(0.01f);
-            }
-        }
-    }
-
     public void AllowMovement()
     {
+        anim.applyRootMotion = false;
         canMove = true;
     }
 }
