@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
                     SelectObject.current.Interact();
             }
         }
+
         if (Input.mouseScrollDelta.y != 0)
         {
             slotNum = Mathf.Clamp(slotNum - (int)Input.mouseScrollDelta.y, 0, 8);

@@ -8,7 +8,7 @@ public class Combat : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Entity"))
+        if (other.CompareTag("Entity") || other.CompareTag("Human"))
         {
             other.GetComponent<Stats>().TakeDMG(strength);
         }

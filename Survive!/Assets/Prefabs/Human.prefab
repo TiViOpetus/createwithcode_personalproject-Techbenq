@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115661676}
   m_LocalRotation: {x: 0.28426605, y: -0, z: -0, w: 0.9587455}
-  m_LocalPosition: {x: 0, y: 16.74, z: -11.03}
+  m_LocalPosition: {x: 0, y: 19.33, z: -17.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 994045995630712713}
@@ -191,12 +191,12 @@ GameObject:
   - component: {fileID: 994045995630712713}
   - component: {fileID: 2642333294509117519}
   - component: {fileID: 5197088323486366243}
-  - component: {fileID: 7780316115615228435}
   - component: {fileID: 308851755572240103}
   - component: {fileID: 919132149548033720}
+  - component: {fileID: 791435045}
   m_Layer: 0
   m_Name: Human
-  m_TagString: Entity
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,21 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1786b49b0829e844a986440cd37e1421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 031b52c046be72c4f84625cc94f95a30, type: 2}
   speed: 1.25
   dodgeSpeed: 0.1
---- !u!114 &7780316115615228435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468479074181287219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c453cbcc499d6fd43b502d656a4df605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
 --- !u!65 &308851755572240103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -297,6 +285,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &791435045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468479074181287219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c41f5c9c8887546b25fabef4c9a491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 10
+  staminaSlid: {fileID: 0}
+  healthSlid: {fileID: 0}
+  hungerSlid: {fileID: 0}
+  coldSlid: {fileID: 0}
 --- !u!1 &587999438668788976
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5babcfecb5aceac4da265994bd5b3c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  simpleNatureMat: {fileID: 2100000, guid: 93caadf4359ae8143aad35b3145d31af, type: 2}
   changeSpeed: 1
 --- !u!54 &2113284565
 Rigidbody:

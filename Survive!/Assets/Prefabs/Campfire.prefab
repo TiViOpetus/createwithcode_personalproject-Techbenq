@@ -93,6 +93,63 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &701198104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701198105}
+  - component: {fileID: 701198106}
+  - component: {fileID: 884530060112040787}
+  m_Layer: 0
+  m_Name: TriggerCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &701198105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701198104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8162205822880212685}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &701198106
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701198104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 34.81
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &884530060112040787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701198104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d46f2936ef1a46b1bfa07371e20b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2055573850
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,8 +192,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.17
-  m_Center: {x: 0, y: 3.13, z: 0}
+  m_Radius: 5.6240263
+  m_Center: {x: 0, y: 4.584027, z: 0}
 --- !u!1 &8795013714019761271
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +232,7 @@ Transform:
   - {fileID: 3004788314880799206}
   - {fileID: 438746121}
   - {fileID: 2055573851}
+  - {fileID: 701198105}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -239,13 +297,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb0b8de8a38caa47a6f962bc9d617d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stickItem: {fileID: 11400000, guid: 031b52c046be72c4f84625cc94f95a30, type: 2}
   sticks:
   - {fileID: 2649260560837338055}
   - {fileID: 6793518362419354700}
   - {fileID: 8645666359717223914}
   - {fileID: 8386688739393423096}
   - {fileID: 3004788314880437702}
-  burnDelay: 5
+  burnDelay: 184.82
   minInner: 20
   maxInner: 80
   minOuter: 40
@@ -359,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_StaticEditorFlags

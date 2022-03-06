@@ -5,9 +5,9 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public float maxHealth;
-    private float currentHealth;
+    public float currentHealth;
     
-    public void TakeDMG(float dmg)
+    public virtual void TakeDMG(float dmg)
     {
         currentHealth -= dmg;
         if(currentHealth <= 0)

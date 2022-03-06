@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CampfireScript : Interactable
 {
+    public float maxRadius;
+    public SphereCollider triggerCollider;
+
     public Item stickItem;
     public GameObject[] sticks;
     public float burnDelay;
@@ -14,16 +17,9 @@ public class CampfireScript : Interactable
     private int maxSticks;
     private int burningSticks = 0;
 
-#region instance 
-    public static CampfireScript instance;
-    private void Awake()
-    {
-        instance = this;
-    }
-    #endregion
-
     private void Start()
     {
+
         campfireLight = GetComponentInChildren<Light>();
         foreach(GameObject stick in sticks)
         {
@@ -89,6 +85,8 @@ public class CampfireScript : Interactable
 
         campfireLight.spotAngle = Mathf.Clamp(maxOuter * procent * 1.25f, minOuter, maxOuter);
         campfireLight.innerSpotAngle = Mathf.Clamp(maxInner * procent, minInner, maxInner);
+
+        triggerCollider.radius = maxRadius * procent;
 
         if (burningSticks == 0)
             campfireLight.intensity = 0;
