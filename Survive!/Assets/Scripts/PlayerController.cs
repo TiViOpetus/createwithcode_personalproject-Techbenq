@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
             controller.Move(Vector3.down * Time.deltaTime * speed * 2);
         }
 
-
         if (canMove)
         {
             horizontal = Input.GetAxis("Horizontal");
@@ -41,13 +40,10 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("SideSpeed", horizontal);
             anim.SetFloat("MovementSpeed", vertical);
 
-            if (horizontal != 0)
+            if (horizontal != 0 || vertical != 0)
             {
-                controller.Move(transform.right * horizontal * Time.deltaTime * speed);
-            }
-            if (vertical != 0)
-            {
-                controller.Move(transform.forward * vertical * Time.deltaTime * speed);
+                Vector3 dir = transform.right * horizontal + transform.forward * vertical;
+                controller.Move(dir * Time.deltaTime * speed);
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
