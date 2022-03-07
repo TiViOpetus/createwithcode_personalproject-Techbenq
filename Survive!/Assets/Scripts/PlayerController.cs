@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
 
-            anim.SetFloat("SideSpeed", horizontal);
-            anim.SetFloat("MovementSpeed", vertical);
+            anim.SetFloat("Side", horizontal);
+            anim.SetFloat("Forward", vertical);
 
             if (horizontal != 0 || vertical != 0)
             {
@@ -47,8 +47,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 anim.applyRootMotion = true;
-                anim.SetTrigger("Dodge");
+
+                anim.Play("RollTree");
                 canMove = false;
+
+                Invoke("AllowMovement", 1.8f);
             }
 
             if (Input.GetKeyDown(KeyCode.E))
