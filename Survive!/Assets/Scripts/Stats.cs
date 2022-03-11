@@ -6,7 +6,11 @@ public class Stats : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
-    
+
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
     public virtual void TakeDMG(float dmg)
     {
         currentHealth -= dmg;

@@ -1341,11 +1341,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &701198106 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 701198106, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
-  m_PrefabInstance: {fileID: 1682263646}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &983037137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,26 +2213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 701198106, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
-      propertyPath: m_Radius
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801229102, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
-      propertyPath: burnDelay
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801229102, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
-      propertyPath: maxRadius
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801229102, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
-      propertyPath: triggerCollider
-      value: 
-      objectReference: {fileID: 701198106}
-    - target: {fileID: 3004788314880437702, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8162205822880212685, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3611,6 +3586,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1348698315}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: maxHunger
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: maxWarmth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: healthSlid
       value: 
       objectReference: {fileID: 18867263}
@@ -3624,6 +3607,10 @@ PrefabInstance:
       objectReference: {fileID: 575531145}
     - target: {fileID: 468479074181287219, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: m_Name
+      value: Human
+      objectReference: {fileID: 0}
+    - target: {fileID: 468479074181287219, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_TagString
       value: Human
       objectReference: {fileID: 0}
     - target: {fileID: 994045995630712713, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}

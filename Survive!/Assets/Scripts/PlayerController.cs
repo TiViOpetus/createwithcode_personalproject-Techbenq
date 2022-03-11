@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     private int slotNum;
+
+    public static PlayerController instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -51,7 +58,7 @@ public class PlayerController : MonoBehaviour
                 anim.Play("RollTree");
                 canMove = false;
 
-                Invoke("AllowMovement", 1.8f);
+                Invoke("AllowMovement",1.7f);
             }
 
             if (Input.GetKeyDown(KeyCode.E))
@@ -90,5 +97,19 @@ public class PlayerController : MonoBehaviour
     {
         anim.applyRootMotion = false;
         canMove = true;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Campfire"))
+        {
+            SurvivalNeeds.withinRadius = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Campfire"))
+        {
+            SurvivalNeeds.withinRadius = false;
+        }
     }
 }
