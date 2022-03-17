@@ -6,7 +6,7 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Locomotion
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 32ffff453d88e8841b402fb4dc24d382, type: 2}
@@ -61,7 +61,7 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BlendTree
+  m_Name: TurnTree
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 7c2a3664a49aeb348913f9e9e4784861, type: 2}
@@ -150,7 +150,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.19556206
+  m_TransitionDuration: 0.4635235
   m_TransitionOffset: 0.006532544
   m_ExitTime: 0.7743515
   m_HasExitTime: 1
@@ -275,25 +275,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Side
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: TurnSpeed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Punch
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -380,7 +380,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.23171741
+  m_TransitionDuration: 0.4737888
   m_TransitionOffset: 0
   m_ExitTime: 0.6840213
   m_HasExitTime: 1

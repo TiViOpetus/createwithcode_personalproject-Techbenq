@@ -6,11 +6,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float rollStaminaNeed;
+    public float punchStaminaNeed;
 
     private CharacterController controller;
     private float horizontal, vertical, mouseX, turnSpeed;
 
     private bool canMove = true;
+    private bool canPunch = true;
 
     private Animator anim;
 
@@ -53,12 +56,15 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                anim.applyRootMotion = true;
+                if (SurvivalNeeds.instance.DrainStamina(rollStaminaNeed))
+                {
+                    anim.applyRootMotion = true;
 
-                anim.Play("RollTree");
-                canMove = false;
+                    anim.Play("RollTree");
+                    canMove = false;
 
-                Invoke("AllowMovement",1.7f);
+                    Invoke("AllowMovement", 1.7f);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.E))
@@ -75,9 +81,19 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetTrigger("Punch");
-            canMove = false;
+            if(canPunch)
+                if (SurvivalNeeds.instance.DrainStamina(punchStaminaNeed))
+                {
+                    anim.SetTrigger("Punch");
+                    canMove = false;
+                    canPunch = false;
+                }
         }
+    }
+
+    private void allowPunch()
+    {
+        canPunch = true;
     }
 
     // Turns the player with mouse smoothly
