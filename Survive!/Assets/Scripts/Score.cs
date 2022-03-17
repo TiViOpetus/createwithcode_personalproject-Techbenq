@@ -9,10 +9,15 @@ public class Score : MonoBehaviour
     private void Start()
     {
         scoreText = GetComponent<Text>();
-        Invoke("AddScore", 1);
+        InvokeRepeating("AddTimedScore", 1,1);
     }
 
-    public void AddScore(float amount = 1)
+    public void AddTimedScore()
+    {
+        AddScore(1);
+    }
+
+    public void AddScore(float amount)
     {
         score += amount;
         scoreText.text = "SCORE: " + score;

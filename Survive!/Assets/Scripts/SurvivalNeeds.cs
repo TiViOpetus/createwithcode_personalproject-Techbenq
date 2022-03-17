@@ -85,6 +85,7 @@ public class SurvivalNeeds : Stats
         }
     }
 
+    //Drains stamina and returns true if there was enough stamina
     public bool DrainStamina(float amount)
     {
         if (godMode)
@@ -96,5 +97,15 @@ public class SurvivalNeeds : Stats
         currentStamina -= amount;
         staminaSlid.value = currentStamina / maxStamina;
         return true;
+    }
+
+    //Gain stamina at steadily
+    public void GainStamina()
+    {
+        if(currentStamina < 100)
+        {
+            currentStamina += maxStamina * 0.05f;
+
+        }
     }
 }
