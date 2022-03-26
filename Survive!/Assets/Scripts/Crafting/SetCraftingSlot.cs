@@ -10,6 +10,8 @@ public class SetCraftingSlot : MonoBehaviour
     public GameObject requiredItems;
     public GameObject requiredItem;
 
+
+    //Edits the crafting slot according to the items needed
     private void Start()
     {
         craftingLogo.sprite = recipe.itemToCraft.itemLogo;
@@ -24,6 +26,8 @@ public class SetCraftingSlot : MonoBehaviour
             temp.GetComponentInChildren<Image>().enabled = true;
             temp.GetComponentInChildren<Text>().text = it.amountNeeded + "X";
         }
+
+        GetComponent<CraftingButton>().itemToCraft = recipe;
         Destroy(this);
     }
 }

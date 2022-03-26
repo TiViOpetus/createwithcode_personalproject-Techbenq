@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
             slotNum = Mathf.Clamp(slotNum - (int)Input.mouseScrollDelta.y, 0, 8);
             InventoryManager.instance.SetActiveSlot(slotNum);
         }
+
         if (Input.GetMouseButtonDown(0))
         {
             if(canPunch)

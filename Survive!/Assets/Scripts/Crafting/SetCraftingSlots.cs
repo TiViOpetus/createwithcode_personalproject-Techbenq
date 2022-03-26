@@ -7,6 +7,7 @@ public class SetCraftingSlots : MonoBehaviour
     public GameObject craftingSlot;
     public CraftingRecipe[] recipes;
 
+    //adds every recipe to the crafting menu
     private void Start()
     {
         int i = 0;

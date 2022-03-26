@@ -104,7 +104,7 @@ public class WorldGeneration : MonoBehaviour
 
         if (calculated > 0.5f)
         {
-            calculated = 1;
+            calculated = 1f;
         }
 
         return calculated;

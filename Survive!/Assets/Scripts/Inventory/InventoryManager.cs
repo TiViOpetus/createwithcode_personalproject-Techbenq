@@ -21,6 +21,8 @@ public class InventoryManager : MonoBehaviour
         SetActiveSlot(0);
     }
 
+
+    //Tries to add item to one of the slots if all are full return false
     public bool AddItem(Item item)
     {
         foreach(Slot sl in slots)
@@ -36,6 +38,8 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    //Removes certain item a certain amount
+    //Adds them back if it couldnt remove the mentioned amount
     public bool RemoveItems(Item item, int amount)
     {
         int leftOvers = amount;
@@ -57,6 +61,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    //Sets currently active slot
     public void SetActiveSlot(int slotNum)
     {
         if(activeSlot != null)
