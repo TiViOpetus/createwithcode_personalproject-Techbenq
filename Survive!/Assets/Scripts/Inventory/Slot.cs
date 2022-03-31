@@ -7,7 +7,7 @@ public class Slot : MonoBehaviour
     public Image slotImage;
     public Item slotItem;
 
-    private int itemAmount;
+    public int itemAmount;
 
     public bool AddItem(Item item)
     {

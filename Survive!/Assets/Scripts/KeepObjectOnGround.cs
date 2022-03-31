@@ -11,6 +11,8 @@ public class KeepObjectOnGround : MonoBehaviour
     public MeshFilter meshFilter;
     public MeshCollider meshCollider;
 
+    private bool canPlace = true;
+
     public static KeepObjectOnGround instance;
     private void Awake()
     {
@@ -42,7 +44,23 @@ public class KeepObjectOnGround : MonoBehaviour
 
     public bool SetOnGround(GameObject preFab)
     {
-        Instantiate(preFab, transform.position,transform.rotation);
-        return true;
+        if (canPlace)
+        {
+            Instantiate(preFab, transform.position, transform.rotation);
+            return true;
+        }
+        return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        canPlace = false;
+        meshRenderer.material.color = Color.red;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canPlace = true;
+        meshRenderer.material.color = Color.white;
     }
 }

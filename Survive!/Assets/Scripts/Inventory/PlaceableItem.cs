@@ -13,7 +13,10 @@ public class PlaceableItem : Item
     {
         if (KeepObjectOnGround.instance.SetOnGround(itemPrefab))
         {
-            Unactivate();
+            if(InventoryManager.instance.activeSlot.itemAmount <= 1)
+            {
+                Unactivate();
+            }
             return true;
         }
 
