@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (SurvivalNeeds.instance.DrainStamina(rollStaminaNeed))
                 {
-                    anim.applyRootMotion = true;
+                     anim.applyRootMotion = true;
 
                     anim.Play("RollTree");
                     canMove = false;
@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
             {
                 if(SelectObject.current != null)
                     SelectObject.current.Interact();
+
+                InventoryManager.instance.activeSlot.Use();
             }
         }
 
@@ -89,6 +91,22 @@ public class PlayerController : MonoBehaviour
                     canMove = false;
                     canPunch = false;
                 }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.C))
+        {
+            if (Cursor.visible)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                InventoryManager.instance.ToggleCrafting(false);
+            }
+            else
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                InventoryManager.instance.ToggleCrafting(true);
+            }
         }
     }
 

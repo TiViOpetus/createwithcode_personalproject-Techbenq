@@ -9,7 +9,17 @@ public class Item : ScriptableObject
     public string itemName;
     public int maxStack;
 
-    public virtual void Use()
+    public virtual bool Use()
+    {
+        return false;
+    }
+
+    public virtual void Activate()
+    {
+
+    }
+
+    public virtual void Unactivate()
     {
 
     }

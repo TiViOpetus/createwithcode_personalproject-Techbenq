@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class CraftingButton : MonoBehaviour
 {
     public CraftingRecipe itemToCraft;
-    private List<CraftingRecipeItem> removedItems = new List<CraftingRecipeItem>();
 
     private void Start()
     {
@@ -21,27 +20,9 @@ public class CraftingButton : MonoBehaviour
         {
             if (!InventoryManager.instance.RemoveItems(it.itemNeeded, it.amountNeeded))
             {
-                ReturnItems();
                 return;
             }
-            removedItems.Add(it);
         }
-
-        if (!InventoryManager.instance.AddItem(itemToCraft.itemToCraft))
-        {
-            ReturnItems();
-        }
-    }
-
-    //Returns the items if crafting fails
-    public void ReturnItems()
-    {
-        foreach (CraftingRecipeItem it in removedItems)
-        {
-            for(int i = 0; i < it.amountNeeded; i++)
-            {
-                InventoryManager.instance.AddItem(it.itemNeeded);
-            }
-        }
+        InventoryManager.instance.AddItem(itemToCraft.itemToCraft);
     }
 }

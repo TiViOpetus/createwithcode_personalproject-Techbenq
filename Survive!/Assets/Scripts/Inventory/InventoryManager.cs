@@ -7,6 +7,8 @@ public class InventoryManager : MonoBehaviour
 {
     private Slot[] slots;
 
+    public CanvasGroup craftingMenu;
+
     public Slot activeSlot;
 
     public static InventoryManager instance;
@@ -64,11 +66,32 @@ public class InventoryManager : MonoBehaviour
     //Sets currently active slot
     public void SetActiveSlot(int slotNum)
     {
-        if(activeSlot != null)
-            activeSlot.GetComponent<Image>().color -= new Color(0.2f,0.2f,0.2f);
+
+        if (activeSlot != null)
+        {
+            activeSlot.GetComponent<Image>().color -= new Color(0.2f, 0.2f, 0.2f);
+
+            if (activeSlot.slotItem != null)
+                activeSlot.slotItem.Unactivate();
+        }
 
         activeSlot = slots[slotNum];
         activeSlot.GetComponent<Image>().color += new Color(0.2f, 0.2f, 0.2f);
+
+        if(activeSlot.slotItem != null)
+            activeSlot.slotItem.Activate();
+    }
+
+    public void ToggleCrafting(bool toggle)
+    {
+        if(toggle)
+        {
+            craftingMenu.alpha = 1;
+        }
+        else
+        {
+            craftingMenu.alpha = 0;
+        }
     }
 }
 

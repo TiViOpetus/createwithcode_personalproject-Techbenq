@@ -44,4 +44,15 @@ public class Slot : MonoBehaviour
 
         return 0;
     }
+
+    public void Use()
+    {
+        if(slotItem != null)
+        {
+            if (slotItem.Use())
+            {
+                RemoveItem(slotItem, 1);
+            }
+        }
+    }
 }
