@@ -7,8 +7,15 @@ public class Slot : MonoBehaviour
     public Image slotImage;
     public Item slotItem;
 
+    public Text slotText;
+
     public int itemAmount;
 
+
+    private void Start()
+    {
+        slotText = GetComponentInChildren<Text>();
+    }
     public bool AddItem(Item item)
     {
         if(itemAmount > 0)
@@ -16,6 +23,7 @@ public class Slot : MonoBehaviour
             if (itemAmount < item.maxStack)
             {
                 itemAmount++;
+                slotText.text = itemAmount.ToString();
                 return true;
             }
             else return false;
@@ -26,15 +34,19 @@ public class Slot : MonoBehaviour
             slotImage.enabled = true;
             slotItem = item;
             itemAmount++;
+            slotText.text = itemAmount.ToString();
             return true;
         }
     }
+    
     public int RemoveItem(Item item, int amount)
     {
         if(itemAmount <= amount)
         {
             int i = itemAmount;
             itemAmount = 0;
+            slotText.text = "";
+
             slotItem = null;
             slotImage.enabled = false;
 
