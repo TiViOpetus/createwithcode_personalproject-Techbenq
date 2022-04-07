@@ -35,8 +35,7 @@ public class PlaceableItem : Item
     public override void Unactivate()
     {
         base.Unactivate();
-        KeepObjectOnGround.instance.meshFilter.mesh = null;
-        KeepObjectOnGround.instance.meshCollider.enabled = false;
+        KeepObjectOnGround.instance.DisableObject();
     }
 
 }

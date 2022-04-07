@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce6c034809ba044ea187effe9e26a97, type: 3}
   m_Name: Wall
   m_EditorClassIdentifier: 
-  itemLogo: {fileID: 0}
+  itemLogo: {fileID: 21300000, guid: 932494347476ee04c8a0b95cbe6fdb26, type: 3}
   itemName: Wall
   maxStack: 2
   itemPrefab: {fileID: 3533957771258462555, guid: 3534c7186a8d52848be473257a20485f, type: 3}

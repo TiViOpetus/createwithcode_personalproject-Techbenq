@@ -156,14 +156,18 @@ public class WorldGeneration : MonoBehaviour
                     }
                 }
             }
+
             //remove used verts from being used again
             foreach (Vector3 vert in usedVerts)
                 availableVerts.Remove(vert);
         }
+
         EnemySpawner.spawnLocations = availableVerts;
+        //ItemGeneration.instance.SetValues(availableVerts, prefabs);
     }
 }
 
+//Small class for items maybe could be a struct
 [System.Serializable]
 public class Prefab
 {

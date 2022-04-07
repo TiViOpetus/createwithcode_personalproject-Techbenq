@@ -32,6 +32,7 @@ public class KeepObjectOnGround : MonoBehaviour
         KeepOnGround();
     }
 
+    //Puts objects position on ground
     private void KeepOnGround()
     {
         RaycastHit hit;
@@ -42,6 +43,7 @@ public class KeepObjectOnGround : MonoBehaviour
         }
     }
 
+    //Sets the prefab on the spot
     public bool SetOnGround(GameObject preFab)
     {
         if (canPlace)
@@ -52,12 +54,19 @@ public class KeepObjectOnGround : MonoBehaviour
         return false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void DisableObject()
+    {
+        meshFilter.mesh = null;
+        meshCollider.enabled = false;
+        canPlace = true;
+        meshRenderer.material.color = Color.white;
+    }
+
+    private void OnTriggerStay(Collider other)
     {
         canPlace = false;
         meshRenderer.material.color = Color.red;
     }
-
     private void OnTriggerExit(Collider other)
     {
         canPlace = true;

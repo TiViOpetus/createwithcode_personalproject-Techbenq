@@ -13,6 +13,10 @@ public class SurvivalNeeds : Stats
     public float maxHunger;
     public float maxWarmth;
 
+    public float coldRate;
+    public float hungerRate;
+    public float staminaCd;
+
     private float currentStamina;
     private float currentHunger;
     private float currentWarmth;
@@ -30,13 +34,15 @@ public class SurvivalNeeds : Stats
         currentStamina = maxStamina;
         currentHunger = maxHunger;
         currentWarmth = maxWarmth;
+
         if (!godMode)
         {
-            InvokeRepeating("GetCold", 4, 0.1f);
-            InvokeRepeating("GetHungry", 4, 0.15f);
+            InvokeRepeating("GetCold", 5, coldRate);
+            InvokeRepeating("GetHungry", 5, hungerRate);
         }
     }
 
+    //Take Damage
     public override void TakeDMG(float dmg)
     {
         if (godMode)
@@ -96,6 +102,9 @@ public class SurvivalNeeds : Stats
 
         currentStamina -= amount;
         staminaSlid.value = currentStamina / maxStamina;
+
+        InvokeRepeating("GainStamina", staminaCd, 0.1f);
+
         return true;
     }
 
@@ -105,7 +114,8 @@ public class SurvivalNeeds : Stats
         if(currentStamina < 100)
         {
             currentStamina += maxStamina * 0.05f;
-
+            currentStamina = Mathf.Clamp(currentStamina, 0, 100);
+            GetHungry();
         }
     }
 }

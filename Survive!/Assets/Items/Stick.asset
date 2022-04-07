@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248cd22187f58ec4a8d0a71410a72956, type: 3}
   m_Name: Stick
   m_EditorClassIdentifier: 
-  itemLogo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemLogo: {fileID: 21300000, guid: ebd6df16ea5da3744a49990951fce80d, type: 3}
   itemName: Stick
   maxStack: 2

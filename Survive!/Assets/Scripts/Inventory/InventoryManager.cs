@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
 
     public Slot activeSlot;
 
+    private Button[] craftingButtons;
+
     public static InventoryManager instance;
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class InventoryManager : MonoBehaviour
     private void Start()
     {
         slots = GetComponentsInChildren<Slot>();
+        craftingButtons = craftingMenu.GetComponentsInChildren<Button>();
         SetActiveSlot(0);
     }
 
@@ -33,6 +36,10 @@ public class InventoryManager : MonoBehaviour
             {
                 if (sl.AddItem(item))
                 {
+                    if(sl == activeSlot)
+                    {
+                        sl.slotItem.Activate();
+                    }
                     return true;
                 }
             }
@@ -41,7 +48,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     //Removes certain item a certain amount
-    //Adds them back if it couldnt remove the mentioned amount
+    //Adds them back if it couldnt remove the given amount
     public bool RemoveItems(Item item, int amount)
     {
         int leftOvers = amount;
@@ -49,7 +56,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (sl.slotItem == item)
             {
-                leftOvers = sl.RemoveItem(item, leftOvers);
+                leftOvers = sl.RemoveItem(leftOvers);
                 if(leftOvers <= 0)
                 {
                     return true;
@@ -82,6 +89,7 @@ public class InventoryManager : MonoBehaviour
             activeSlot.slotItem.Activate();
     }
 
+    //Toggles on crafting menu
     public void ToggleCrafting(bool toggle)
     {
         if(toggle)
@@ -92,6 +100,11 @@ public class InventoryManager : MonoBehaviour
         {
             craftingMenu.alpha = 0;
         }
+        foreach (Button bt in craftingButtons)
+        {
+            bt.enabled = toggle;
+        }
+
     }
 }
 

@@ -19,7 +19,6 @@ public class CampfireScript : Interactable
 
     private void Start()
     {
-
         campfireLight = GetComponentInChildren<Light>();
         foreach(GameObject stick in sticks)
         {
@@ -33,15 +32,16 @@ public class CampfireScript : Interactable
         InvokeRepeating("BurnStick", burnDelay * 2, burnDelay);
     }
 
+    //Interacts with campfire removes a stick and adds it to the campfire
     public override void Interact()
     {
         base.Interact();
         if (burningSticks >= maxSticks) return;
-        if(InventoryManager.instance.activeSlot.slotItem == stickItem)
-        {
-            AddStick();
-            InventoryManager.instance.activeSlot.RemoveItem(stickItem,1);
-        }
+            if(InventoryManager.instance.activeSlot.slotItem == stickItem)
+            {
+                AddStick();
+                InventoryManager.instance.activeSlot.RemoveItem(1);
+            }
     }
 
     //Removes a stick if none left game over

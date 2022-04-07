@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class CraftingButton : MonoBehaviour
 {
     public CraftingRecipe itemToCraft;
-
+    private Button craftingButton;
     private void Start()
     {
-        GetComponentInChildren<Button>().onClick.AddListener(Craft);
+        craftingButton = GetComponentInChildren<Button>();
+        craftingButton.onClick.AddListener(Craft);
     }
 
     //Tries to remove the items for the recipe
@@ -24,5 +25,8 @@ public class CraftingButton : MonoBehaviour
             }
         }
         InventoryManager.instance.AddItem(itemToCraft.itemToCraft);
+
+        craftingButton.interactable = false;
+        craftingButton.interactable = true;
     }
 }

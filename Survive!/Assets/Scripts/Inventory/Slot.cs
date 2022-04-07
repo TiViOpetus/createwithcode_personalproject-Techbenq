@@ -16,6 +16,8 @@ public class Slot : MonoBehaviour
     {
         slotText = GetComponentInChildren<Text>();
     }
+
+    //Adds an item to the slot returns true if slot had space
     public bool AddItem(Item item)
     {
         if(itemAmount > 0)
@@ -39,7 +41,9 @@ public class Slot : MonoBehaviour
         }
     }
     
-    public int RemoveItem(Item item, int amount)
+    //Removes given amount of items from the slot
+    //Returns 0 if given amount is removed
+    public int RemoveItem(int amount)
     {
         if(itemAmount <= amount)
         {
@@ -54,16 +58,19 @@ public class Slot : MonoBehaviour
         }
         itemAmount -= amount;
 
+        slotText.text = itemAmount.ToString();
+
         return 0;
     }
 
+    //Tries to use the item in the slot
     public void Use()
     {
         if(slotItem != null)
         {
             if (slotItem.Use())
             {
-                RemoveItem(slotItem, 1);
+                RemoveItem(1);
             }
         }
     }
