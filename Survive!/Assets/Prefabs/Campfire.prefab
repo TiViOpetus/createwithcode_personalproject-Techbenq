@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 6993762772135288226}
   - component: {fileID: 1801229102}
   - component: {fileID: 861438415}
+  - component: {fileID: -7197971687218239023}
   m_Layer: 7
   m_Name: Campfire
   m_TagString: Untagged
@@ -311,6 +312,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.150332, y: 9.054808, z: 14.2745695}
   m_Center: {x: 0.04114198, y: 3.8996797, z: 0.12393341}
+--- !u!208 &-7197971687218239023
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8795013714019761271}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.5750003, y: 0.628, z: 7.1370006}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.041, y: 0, z: 0.124000005}
+  m_TimeToStationary: 0.5
 --- !u!1001 &3494665671024927699
 PrefabInstance:
   m_ObjectHideFlags: 0

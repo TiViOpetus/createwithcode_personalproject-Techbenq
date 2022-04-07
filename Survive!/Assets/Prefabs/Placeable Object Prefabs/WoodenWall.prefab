@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1004066216067257412}
   - component: {fileID: 3029761115735728270}
   - component: {fileID: -6937880888693514567}
+  - component: {fileID: 5265993292652126564}
   m_Layer: 0
   m_Name: WoodenWall
   m_TagString: Untagged
@@ -96,3 +97,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14.163395, y: 2.3637812, z: 10.133671}
   m_Center: {x: 0.006891489, y: -0.025906092, z: 4.8012586}
+--- !u!208 &5265993292652126564
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3533957771258462555}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 7.0820003, y: 1.182, z: 5.0670004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.007, y: -0.026, z: 4.801}
+  m_TimeToStationary: 0.5

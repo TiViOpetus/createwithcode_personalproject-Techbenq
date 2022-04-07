@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WorldGeneration : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class WorldGeneration : MonoBehaviour
         CreateMesh();
         UpdateMesh();
         AddObjects(prefabs);
+        GetComponent<NavMeshSurface>().BuildNavMesh();
         Destroy(this);
     }
 
