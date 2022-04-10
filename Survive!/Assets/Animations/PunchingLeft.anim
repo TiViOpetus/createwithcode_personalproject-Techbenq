@@ -12355,7 +12355,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.33333334
+        time: 0.46666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -12364,7 +12364,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.6
+        time: 0.6666667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -12385,7 +12385,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsTrigger
-    path: mixamorig:Hips/CombatBox
+    path: 
     classID: 65
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -12397,7 +12397,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3143014555
+      path: 0
       attribute: 2693561734
       script: {fileID: 0}
       typeID: 65
@@ -25673,7 +25673,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.33333334
+        time: 0.46666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -25682,7 +25682,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.6
+        time: 0.6666667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -25703,7 +25703,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsTrigger
-    path: mixamorig:Hips/CombatBox
+    path: 
     classID: 65
     script: {fileID: 0}
   m_EulerEditorCurves: []
