@@ -365,8 +365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
-  itemToDrop: {fileID: 11400000, guid: 031b52c046be72c4f84625cc94f95a30, type: 2}
-  dropChance: 20
+  itemToDrop: {fileID: 116614, guid: 9f063c5e5835cbd4b8dc54a6c0b45db4, type: 3}
+  dropChance: 100
   attackSpeed: 1
 --- !u!1 &7064286503667145268
 GameObject:

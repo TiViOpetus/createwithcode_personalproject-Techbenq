@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 7405846476846410216}
   - component: {fileID: 7405846476847541032}
   - component: {fileID: 1048787885362854054}
-  - component: {fileID: 8719528471701799259}
+  - component: {fileID: -5570091755551802823}
   m_Layer: 0
   m_Name: Rock_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7405846476849834440
 Transform:
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.85556585, y: 0.5345735, z: 0.8734082}
   m_Center: {x: -0.01697725, y: 0.028850526, z: 0.004005462}
---- !u!208 &8719528471701799259
+--- !u!208 &-5570091755551802823
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,9 +106,9 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.42800003, y: 0.26700002, z: 0.437}
+  m_Extents: {x: 0.4277829, y: 0.26700002, z: 0.437}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.017, y: 0.029000001, z: 0.004}
+  m_Center: {x: -0.01697725, y: 0.02885053, z: 0.004005462}
   m_TimeToStationary: 0.5

@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 2222111361403691372}
   - component: {fileID: 2222111361402594220}
   - component: {fileID: 5042872502891257344}
-  - component: {fileID: 5644174232895439217}
+  - component: {fileID: 1186727955560933547}
   m_Layer: 0
   m_Name: Tree_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2222111361405018444
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7123081, y: 3.323627, z: 0.7843793}
   m_Center: {x: 0.01120314, y: 1.661825, z: -0.05001405}
---- !u!208 &5644174232895439217
+--- !u!208 &1186727955560933547
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

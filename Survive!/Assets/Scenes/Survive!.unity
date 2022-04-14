@@ -4182,6 +4182,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438746120, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055573850, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649260560837338055, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004788314880437702, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508432749310390631, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793518362419354700, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8162205822880212685, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4226,9 +4250,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8386688739393423096, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645666359717223914, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8795013714019761271, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
       propertyPath: m_Name
       value: Campfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795013714019761271, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9a32a69a8a50d54fa4836bbd08c074b, type: 3}
@@ -4857,9 +4893,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.5
+  m_VoxelSize: 0.065
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: be160e64b8072e24e800d12f81354d18, type: 2}
 --- !u!1 &2130354382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,7 +5101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: coldRate
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: coldSlid
@@ -5085,7 +5121,7 @@ PrefabInstance:
       objectReference: {fileID: 18867263}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: hungerRate
-      value: 1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: hungerSlid

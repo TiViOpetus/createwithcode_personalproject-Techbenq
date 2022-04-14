@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : Stats
 {
-    public Item itemToDrop;
+    public GameObject itemToDrop;
     public float dropChance;
     public float attackSpeed;
     public override void TakeDMG(float dmg)
@@ -16,7 +16,7 @@ public class EnemyStats : Stats
 
             if(rand <= dropChance)
             {
-                InventoryManager.instance.AddItem(itemToDrop);
+                Instantiate(itemToDrop, transform.position + Vector3.down * 0.85f, itemToDrop.transform.rotation);
             }
 
             EnemySpawner.enemyCount -= 1;
