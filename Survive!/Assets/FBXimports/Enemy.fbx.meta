@@ -12,6 +12,9 @@ ModelImporter:
   - first:
       74: -3448906844727728344
     second: Enemy|Still
+  - first:
+      74: -6015378099502856753
+    second: Enemy|Still (1)
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -41,21 +44,21 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Enemy|Bite
-      takeName: Enemy|Bite
+      name: Enemy|Still (1)
+      takeName: Enemy|Still
       internalID: 0
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
-      level: 20.48
+      level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
