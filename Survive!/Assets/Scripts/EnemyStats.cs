@@ -6,7 +6,7 @@ public class EnemyStats : Stats
 {
     public Item itemToDrop;
     public float dropChance;
-
+    public float attackSpeed;
     public override void TakeDMG(float dmg)
     {
         currentHealth -= dmg;

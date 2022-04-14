@@ -13,6 +13,9 @@ public class SurvivalNeeds : Stats
     public float maxHunger;
     public float maxWarmth;
 
+    public float hungerDmg;
+    public float coldDmg;
+
     public float coldRate;
     public float hungerRate;
     public float staminaCd;
@@ -20,6 +23,8 @@ public class SurvivalNeeds : Stats
     private float currentStamina;
     private float currentHunger;
     private float currentWarmth;
+
+    private bool alive = true;
 
     public Slider staminaSlid, healthSlid, hungerSlid, coldSlid;
 
@@ -37,8 +42,8 @@ public class SurvivalNeeds : Stats
 
         if (!godMode)
         {
-            InvokeRepeating("GetCold", 5, coldRate);
-            InvokeRepeating("GetHungry", 5, hungerRate);
+            StartCoroutine(GetCold());
+            StartCoroutine(GetHungry());
         }
     }
 
@@ -54,40 +59,50 @@ public class SurvivalNeeds : Stats
 
 
     //Makes the player get cold
-    private void GetCold()
+    private IEnumerator GetCold()
     {
-        if (withinRadius)
-        {
-            if (currentWarmth < 100)
-            {
-                currentWarmth += maxWarmth * 0.005f;
-                coldSlid.value = currentWarmth / maxWarmth;
-            }
-        }
-        else
-        {
-            if (currentWarmth > 0)
-            {
-                currentWarmth -= maxWarmth * 0.0025f;
-                coldSlid.value = currentWarmth / maxWarmth;
-            }
-        }
 
-        if (currentWarmth <= 10)
+        while (alive)
         {
-            TakeDMG(maxHealth * 0.005f);
+            yield return new WaitForSeconds(coldRate);
+
+            if (withinRadius)
+            {
+                if (currentWarmth < 100)
+                {
+                    currentWarmth += maxWarmth * 0.005f;
+                    coldSlid.value = currentWarmth / maxWarmth;
+                }
+            }
+            else
+            {
+                if (currentWarmth > 0)
+                {
+                    currentWarmth -= maxWarmth * 0.0025f;
+                    coldSlid.value = currentWarmth / maxWarmth;
+                }
+            }
+
+            if (currentWarmth <= 10)
+            {
+                TakeDMG(maxHealth * coldDmg / 100);
+            }
         }
     }
 
     //Makes the player get hungry
-    private void GetHungry()
+    private IEnumerator GetHungry()
     {
-        currentHunger = Mathf.Clamp(currentHunger - maxHunger * 0.0025f, 0, maxHunger);
-        hungerSlid.value = currentHunger / maxHunger;
-
-        if (currentHunger <= 0)
+        while (alive)
         {
-            TakeDMG(maxHealth * 0.01f);
+            yield return new WaitForSeconds(hungerRate);
+            currentHunger = Mathf.Clamp(currentHunger - maxHunger * 0.0025f, 0, maxHunger);
+            hungerSlid.value = currentHunger / maxHunger;
+
+            if (currentHunger <= 0)
+            {
+                TakeDMG(maxHealth * hungerDmg / 100);
+            }
         }
     }
 
@@ -100,9 +115,10 @@ public class SurvivalNeeds : Stats
         if (currentStamina - amount < 0)
             return false;
 
+        CancelInvoke();
         currentStamina -= amount;
         staminaSlid.value = currentStamina / maxStamina;
-
+        
         InvokeRepeating("GainStamina", staminaCd, 0.1f);
 
         return true;
@@ -115,6 +131,7 @@ public class SurvivalNeeds : Stats
         {
             currentStamina += maxStamina * 0.05f;
             currentStamina = Mathf.Clamp(currentStamina, 0, 100);
+            staminaSlid.value = currentStamina / maxStamina;
             GetHungry();
         }
     }

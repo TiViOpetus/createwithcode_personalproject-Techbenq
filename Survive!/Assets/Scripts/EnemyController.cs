@@ -10,8 +10,13 @@ public class EnemyController : MonoBehaviour
     public float attackDistance;
     public Transform player;
 
+    private EnemyStats stats;
+    private bool canAttack = true;
+
     private void Start()
     {
+        stats = GetComponent<EnemyStats>();
+
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Human").GetComponent<Transform>();
@@ -42,6 +47,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    //Faces toward player when not moving
     private void FaceTarget()
     {
         Vector3 direction = player.position - transform.position;
@@ -49,9 +55,20 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
     }
 
+
+    //Attacks the player if it can
     private void Attack()
     {
-        Debug.Log("Attacking");
-        anim.SetTrigger("Attack");
+        if (canAttack)
+        {
+            anim.SetTrigger("Attack");
+            canAttack = false;
+
+            Invoke("AllowAttack", stats.attackSpeed);
+        }
+    }
+    private void AllowAttack()
+    {
+        canAttack = true;
     }
 }

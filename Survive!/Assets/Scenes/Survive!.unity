@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 638214211}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999946, b: 0.99999946, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1965,7 +1965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &658628772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5056,13 +5056,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: coldDmg
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: godMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: coldRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: coldSlid
       value: 
       objectReference: {fileID: 1348698315}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: hungerDmg
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: staminaCd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: healthSlid
       value: 
       objectReference: {fileID: 18867263}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: hungerRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: hungerSlid
       value: 
@@ -5128,8 +5152,20 @@ PrefabInstance:
       value: 3.361553
       objectReference: {fileID: 0}
     - target: {fileID: 4476490313268472042, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476490313268472042, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: m_Center.z
       value: 3.5163767
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476490313268472042, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197088323486366243, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: rollLength
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}

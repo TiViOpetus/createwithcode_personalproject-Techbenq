@@ -9,11 +9,14 @@ public class PlayerController : MonoBehaviour
     public float rollStaminaNeed;
     public float punchStaminaNeed;
 
+    public float rollLength;
+
     private CharacterController controller;
     private float horizontal, vertical, mouseX, turnSpeed;
 
     private bool canMove = true;
     private bool canPunch = true;
+    private bool canRoll = true;
 
     private Animator anim;
 
@@ -56,14 +59,19 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (SurvivalNeeds.instance.DrainStamina(rollStaminaNeed))
+                if (canRoll)
                 {
-                     anim.applyRootMotion = true;
+                    if (SurvivalNeeds.instance.DrainStamina(rollStaminaNeed))
+                    {
+                        anim.applyRootMotion = true;
 
-                    anim.Play("RollTree");
-                    canMove = false;
+                        anim.SetTrigger("Roll");
+                        canMove = false;
+                        canRoll = false;
 
-                    Invoke("AllowMovement", 1.7f);
+                        Invoke("AllowMovement", rollLength);
+                        Invoke("AllowRoll", rollLength * 1.25f);
+                    }
                 }
             }
 
@@ -133,6 +141,12 @@ public class PlayerController : MonoBehaviour
         anim.applyRootMotion = false;
         canMove = true;
     }
+
+    private void AllowRoll()
+    {
+        canRoll = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Campfire"))
