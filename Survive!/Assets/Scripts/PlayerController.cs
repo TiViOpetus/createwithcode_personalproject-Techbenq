@@ -80,7 +80,8 @@ public class PlayerController : MonoBehaviour
                 if(SelectObject.current != null)
                     SelectObject.current.Interact();
 
-                InventoryManager.instance.activeSlot.Use();
+                else
+                    InventoryManager.instance.activeSlot.Use();
             }
         }
 

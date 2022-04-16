@@ -78,14 +78,16 @@ public class SurvivalNeeds : Stats
             {
                 if (currentWarmth > 0)
                 {
-                    currentWarmth -= maxWarmth * 0.0025f;
+                    if(!DayNightCycle.isDay) currentWarmth -= maxWarmth * 0.025f;
+                    else currentWarmth -= maxWarmth * 0.002f;
+
                     coldSlid.value = currentWarmth / maxWarmth;
                 }
             }
 
             if (currentWarmth <= 10)
             {
-                TakeDMG(maxHealth * coldDmg / 100);
+                TakeDMG(maxHealth * (coldDmg / 100));
             }
         }
     }
@@ -101,7 +103,7 @@ public class SurvivalNeeds : Stats
 
             if (currentHunger <= 0)
             {
-                TakeDMG(maxHealth * hungerDmg / 100);
+                TakeDMG(maxHealth * (hungerDmg / 100));
             }
         }
     }

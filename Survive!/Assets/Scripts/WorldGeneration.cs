@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+/*
+     * OLD VERSION
+     *
+     * USE WorldGenerationV2.cs
+     * INSTEAD 
+     * 
+     * 
+*/
+
 public class WorldGeneration : MonoBehaviour
 {
     public int sizeX, sizeZ;
@@ -167,12 +177,4 @@ public class WorldGeneration : MonoBehaviour
         EnemySpawner.spawnLocations = availableVerts;
         //ItemGeneration.instance.SetValues(availableVerts, prefabs);
     }
-}
-
-//Small class for items maybe could be a struct
-[System.Serializable]
-public class Prefab
-{
-    public GameObject prefab;
-    public float spawnChance;
 }
