@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayNightCycle : MonoBehaviour
 {
     public static bool isDay = true;
 
+    public Text dayText;
+    public Animator nextDayAnim;
+
     public Gradient ambient, fog, directional;
 
     public float rotateSpeed;
     public float dayLength;
+
+    public int dayNum = 1;
+    private bool nextDay = false;
 
     private float currentTime;
     private float dayProcent;
@@ -20,6 +27,7 @@ public class DayNightCycle : MonoBehaviour
         directionalLight = GetComponent<Light>();
     }
 
+    //Rotates the Light to make a day night cycle and upon a new day plays animation and makes it harder
     private void Update()
     {
         currentTime += Time.deltaTime * rotateSpeed;
@@ -27,8 +35,25 @@ public class DayNightCycle : MonoBehaviour
         dayProcent = currentTime / dayLength;
 
         if (dayProcent > 0.5f)
+        {
             isDay = false;
-        else isDay = true;
+            nextDay = true;
+        }
+        else
+        {
+            if (nextDay)
+            {
+                dayNum++;
+                dayText.text = "Day " + dayNum;
+                nextDayAnim.Play("FadeIn");
+
+                ObjectGeneration.instance.CreateObjects();
+                EnemySpawner.maxEnemies += 1;
+
+                nextDay = false;
+            }
+            isDay = true;
+        }
 
         transform.eulerAngles = new Vector3(360 * dayProcent, 0);
         UpdateLightning();

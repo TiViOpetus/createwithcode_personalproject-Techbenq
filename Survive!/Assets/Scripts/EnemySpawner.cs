@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public static List<Vector3> spawnLocations;
     public static int enemyCount;
 
-    public int maxEnemies;
+    public static int maxEnemies = 2;
     public int spawnDelay;
 
     public GameObject enemyPrefab;

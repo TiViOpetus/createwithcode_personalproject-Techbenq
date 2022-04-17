@@ -43,8 +43,12 @@ public class WorldGenerationV2 : MonoBehaviour
         ObjectGeneration.instance.availableVerts = availableVerts;
         ObjectGeneration.instance.CreateFirstObjects();
         GetComponent<NavMeshSurface>().BuildNavMesh();
+
+        Destroy(this);
     }
 
+
+    //Creates positions for the verts
     private void CreateVerts()
     {
         verts = new Vector3[(xSize + 1) * (zSize + 1)];
@@ -60,6 +64,7 @@ public class WorldGenerationV2 : MonoBehaviour
         }
     }
 
+    //gets a height for a vert
     private float GetHeight(int x, int z)
     {
         float xCoord = (float)x / xSize * scale + seed;
@@ -67,7 +72,10 @@ public class WorldGenerationV2 : MonoBehaviour
 
         float perlin = Mathf.PerlinNoise(xCoord, zCoord);
 
-        if(perlin < 0.5f)
+        if (z == 0 || z == zSize) return 0;
+        if (x == 0 || x == xSize) return 0;
+
+        if(perlin < 0.36f)
         {
             return perlin;
         }
@@ -78,6 +86,7 @@ public class WorldGenerationV2 : MonoBehaviour
         }
     }
 
+    //Gets triangle points for the mesh
     private void GetTriangles()
     {
         triangles = new int[xSize * zSize * 6];
@@ -100,6 +109,7 @@ public class WorldGenerationV2 : MonoBehaviour
         }
     }
 
+    //Sets Colors to the verts according to the height
     private void SetVertColors() 
     {
         vertColors = new Color[verts.Length];
@@ -110,6 +120,8 @@ public class WorldGenerationV2 : MonoBehaviour
         }
     }
     
+
+    //Sets the mesh 
     private void UpdateMesh()
     {
         mesh.vertices = verts;
@@ -119,6 +131,7 @@ public class WorldGenerationV2 : MonoBehaviour
         mesh.RecalculateNormals();
         gameObject.AddComponent<MeshCollider>();
     }
+
     //Sets down campfire and player and removes the vertices near the campfire
     private void SetPlayerAndCampfire()
     {
@@ -178,8 +191,8 @@ public class WorldGenerationV2 : MonoBehaviour
                 if (i + campMinSpace * xSize > verts.Length) return Vector3.zero;
 
 
-                //if current vert is less than 0.45 then its not good
-                if (verts[i].y < 0.5f)
+                //if current vert is less than 0.4 then its not good
+                if (verts[i].y < 0.4f)
                 {
                     i++;
                     continue;
@@ -189,7 +202,7 @@ public class WorldGenerationV2 : MonoBehaviour
                 //Tests every vert to the sides of the current vert
                 for(int width = -campMinSpace; width < campMinSpace; width++)
                 {
-                    if (verts[i + width].y < 0.5)
+                    if (verts[i + width].y < 0.4)
                     {
                         possible = false;
                         break;
@@ -206,7 +219,7 @@ public class WorldGenerationV2 : MonoBehaviour
                 {
                     if(height < 0)
                     {
-                        if(verts[i - xSize * height].y < 0.5f)
+                        if(verts[i - (height - 1) * xSize].y < 0.4f)
                         {
                             possible = false;
                             break;
@@ -214,7 +227,7 @@ public class WorldGenerationV2 : MonoBehaviour
                     }
                     else
                     {
-                        if (verts[i + height - xSize].y < 0.5f)
+                        if (verts[i + (height - 1) * xSize].y < 0.4f)
                         {
                             possible = false;
                             break;
