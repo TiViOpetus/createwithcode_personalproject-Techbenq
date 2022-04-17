@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 031b52c046be72c4f84625cc94f95a30, type: 2}
+  naturalResource: 1
   prefabNumber: 3
 --- !u!65 &6966276341570553256
 BoxCollider:

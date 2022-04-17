@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4172434243884860364}
   - component: {fileID: 5411363109402217038}
   - component: {fileID: 3131168356478714728}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Steak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 4984d55328fe29f4fb9a53271a340a3f, type: 2}
+  naturalResource: 0
+  prefabNumber: 0

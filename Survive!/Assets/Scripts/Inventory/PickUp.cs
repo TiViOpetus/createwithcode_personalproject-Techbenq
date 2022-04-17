@@ -7,6 +7,7 @@ public class PickUp : Interactable
     public Item item;
 
     //REDO LATER
+    public bool naturalResource;
     public int prefabNumber;
 
     //Tries to pick up the object
@@ -15,8 +16,11 @@ public class PickUp : Interactable
         base.Interact();
         if (InventoryManager.instance.AddItem(item))
         {
-            ObjectGeneration.instance.availableVerts.Add(transform.position);
-            ObjectGeneration.instance.prefabs[prefabNumber].amount--;
+            if (naturalResource)
+            {
+                ObjectGeneration.instance.availableVerts.Add(transform.position);
+                ObjectGeneration.instance.prefabs[prefabNumber].amount--;
+            }
             Destroy(gameObject);
         }
     }
