@@ -78,7 +78,7 @@ public class SurvivalNeeds : Stats
             {
                 if (currentWarmth > 0)
                 {
-                    if(!DayNightCycle.isDay) currentWarmth -= maxWarmth * 0.025f;
+                    if(!DayNightCycle.isDay) currentWarmth -= maxWarmth * 0.005f;
                     else currentWarmth -= maxWarmth * 0.002f;
 
                     coldSlid.value = currentWarmth / maxWarmth;
@@ -90,6 +90,12 @@ public class SurvivalNeeds : Stats
                 TakeDMG(maxHealth * (coldDmg / 100));
             }
         }
+    }
+
+    public void Eat(float value)
+    {
+        currentHunger = Mathf.Clamp(currentHunger + value, 0, maxHunger);
+        hungerSlid.value = currentHunger / maxHunger;
     }
 
     //Makes the player get hungry

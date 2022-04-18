@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CampfireScript : Interactable
 {
+    public ParticleSystem fireEffect;
+
     public float maxRadius;
     public SphereCollider triggerCollider;
 
@@ -51,7 +53,7 @@ public class CampfireScript : Interactable
         if(burningSticks <= 0)
         {
             CancelInvoke();
-            Debug.Log("Game Over!");
+            fireEffect.Stop();
         }
         UpdateCamp();
     }
@@ -61,14 +63,17 @@ public class CampfireScript : Interactable
     {
         if (burningSticks >= maxSticks)
             return false;
+        if (burningSticks <= 0) return false;
 
         burningSticks += 1;
         UpdateCamp();
 
+        fireEffect.Emit(10);
+
         return true;
     }
 
-    //Updates the campfire
+    //Updates the campfire aka sets light radius and collider
     private void UpdateCamp()
     {
         for(int i = 0; i < maxSticks; i++)
@@ -87,6 +92,9 @@ public class CampfireScript : Interactable
         campfireLight.innerSpotAngle = Mathf.Clamp(maxInner * procent, minInner, maxInner);
 
         triggerCollider.radius = maxRadius * procent;
+
+        //Dont know how to use new version
+        fireEffect.startLifetime = 5 * procent;
 
         if (burningSticks == 0)
             campfireLight.intensity = 0;

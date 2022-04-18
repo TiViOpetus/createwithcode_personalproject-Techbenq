@@ -5007,6 +5007,10 @@ MonoBehaviour:
     spawnChance: 4
     amount: 0
     maxAmount: 0
+  - prefab: {fileID: 4555670082285494062, guid: 3d6eb16ca3e90c34198d2b24c201a84d, type: 3}
+    spawnChance: 2
+    amount: 0
+    maxAmount: 0
   availableVerts: []
   player: {fileID: 1299057524}
   parent: {fileID: 456370938}
@@ -5399,7 +5403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: godMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: coldRate
