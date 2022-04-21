@@ -15,4 +15,9 @@ MonoBehaviour:
   itemLogo: {fileID: 21300000, guid: c486ed3ae54e79f459726b52b399e175, type: 3}
   itemName: Apple
   maxStack: 3
+  size: 0.7
+  itemMesh: {fileID: -472147775963580301, guid: 6ed46726ab7770f4f9690fa77487b4b6, type: 3}
+  itemMaterials:
+  - {fileID: -382652638819485698, guid: 2391ad6fed7b9754884a716e46ff8a6a, type: 3}
+  - {fileID: 3291926621068253372, guid: 6ed46726ab7770f4f9690fa77487b4b6, type: 3}
   hungerValue: 25

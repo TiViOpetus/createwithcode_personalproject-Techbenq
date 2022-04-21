@@ -6,9 +6,7 @@ using UnityEngine;
 public class PlaceableItem : Item
 {
     public GameObject itemPrefab;
-    public Mesh itemMesh;
-    public float size;
-
+    public float previewSize;
     public override bool Use()
     {
         if (KeepObjectOnGround.instance.SetOnGround(itemPrefab))
@@ -27,7 +25,7 @@ public class PlaceableItem : Item
     public override void Activate()
     {
         base.Activate();
-        KeepObjectOnGround.instance.meshTransform.localScale = new Vector3(size, size, size);
+        KeepObjectOnGround.instance.meshTransform.localScale = new Vector3(previewSize, previewSize, previewSize);
         KeepObjectOnGround.instance.meshFilter.mesh = itemMesh;
         KeepObjectOnGround.instance.meshCollider.sharedMesh = itemMesh;
         KeepObjectOnGround.instance.meshCollider.enabled = true;

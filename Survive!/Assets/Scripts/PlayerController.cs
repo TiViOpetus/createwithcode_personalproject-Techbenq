@@ -96,7 +96,14 @@ public class PlayerController : MonoBehaviour
             if(canPunch)
                 if (SurvivalNeeds.instance.DrainStamina(punchStaminaNeed))
                 {
-                    anim.SetTrigger("Punch");
+                    if (ToolSlot.instance.toolEquipped)
+                    {
+                        anim.SetTrigger("Hit");
+                    }
+                    else
+                    {
+                        anim.SetTrigger("Punch");
+                    }
                     canMove = false;
                     canPunch = false;
                 }

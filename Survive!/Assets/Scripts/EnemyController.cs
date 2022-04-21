@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public static bool toolEquipped;
-
     private NavMeshAgent agent;
     private Animator anim;
     public float attackDistance;
@@ -61,17 +59,9 @@ public class EnemyController : MonoBehaviour
     //Attacks the player if it can
     private void Attack()
     {
-        if (canAttack && !toolEquipped)
+        if (canAttack)
         {
-            if (!toolEquipped)
-            {
-                anim.SetTrigger("Attack");
-            }
-            else
-            {
-                anim.SetTrigger("Hit");
-            }
-
+            anim.SetTrigger("Attack");
             canAttack = false;
             Invoke("AllowAttack", stats.attackSpeed);
         }
