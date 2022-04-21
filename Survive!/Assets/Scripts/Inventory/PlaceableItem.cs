@@ -23,6 +23,7 @@ public class PlaceableItem : Item
         return false;
     }
 
+    //Changes the mesh if active slot has this item
     public override void Activate()
     {
         base.Activate();

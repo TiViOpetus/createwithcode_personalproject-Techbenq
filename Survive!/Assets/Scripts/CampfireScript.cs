@@ -41,8 +41,8 @@ public class CampfireScript : Interactable
         if (burningSticks >= maxSticks) return;
             if(InventoryManager.instance.activeSlot.slotItem == stickItem)
             {
-                AddStick();
-                InventoryManager.instance.activeSlot.RemoveItem(1);
+                if(AddStick())
+                    InventoryManager.instance.activeSlot.RemoveItem(1);
             }
     }
 
@@ -93,9 +93,9 @@ public class CampfireScript : Interactable
 
         triggerCollider.radius = maxRadius * procent;
 
-        //Dont know how to use new version
-        fireEffect.startLifetime = 5 * procent;
-
+        ParticleSystem.MainModule main = fireEffect.main;
+        main.startLifetime = 5 * procent;
+        
         if (burningSticks == 0)
             campfireLight.intensity = 0;
     }
