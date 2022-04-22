@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7cb7fca2e340e042b7953c1da415cfd, type: 3}
+  m_Name: WeakRope
+  m_EditorClassIdentifier: 
+  requiredItems:
+  - itemNeeded: {fileID: 11400000, guid: f627383f242518f4f8d144a9e48ae62b, type: 2}
+    amountNeeded: 2
+  itemToCraft: {fileID: 11400000, guid: 13eb3d1ae2501224cb486f767be6e5d4, type: 2}

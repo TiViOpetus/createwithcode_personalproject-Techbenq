@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4263922822446936359}
   - component: {fileID: 543219621477744824}
   - component: {fileID: 4060986712165071003}
-  - component: {fileID: 1864474298603215929}
-  m_Layer: 0
+  - component: {fileID: -1078550373041387716}
+  m_Layer: 7
   m_Name: Bush_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.029000001, y: 0.38900003, z: -0.042000003}
   m_TimeToStationary: 0.5
---- !u!114 &1864474298603215929
+--- !u!114 &-1078550373041387716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,11 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4263922822445002727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4114814da7ab6b049b4771a0895d0b18, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dda0af4425be9a49a0f03dd6eaf6df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabIndex: 5
-  itemsQuaranteed:
-  - {fileID: 11400000, guid: f627383f242518f4f8d144a9e48ae62b, type: 2}
-  itemsWithChance: []
-  health: 2
+  item: {fileID: 11400000, guid: f627383f242518f4f8d144a9e48ae62b, type: 2}
+  naturalResource: 1
+  prefabNumber: 5
+  maxTakes: 3

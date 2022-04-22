@@ -10,6 +10,8 @@ public class PickUp : Interactable
     public bool naturalResource;
     public int prefabNumber;
 
+    public int maxTakes = 1;
+
     //Tries to pick up the object
     public override void Interact()
     {
@@ -21,7 +23,12 @@ public class PickUp : Interactable
                 ObjectGeneration.instance.availableVerts.Add(transform.position);
                 ObjectGeneration.instance.prefabs[prefabNumber].amount--;
             }
-            Destroy(gameObject);
+
+            maxTakes--;
+            if(maxTakes <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
