@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 3349481329647215731, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
   - {fileID: 963798294112862009, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
   - {fileID: -1444460858095362738, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
+  dmg: 5

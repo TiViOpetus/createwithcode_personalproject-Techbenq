@@ -8,6 +8,9 @@ public class ToolSlot : MonoBehaviour
     public MeshRenderer meshRenderer;
     public bool toolEquipped = false;
 
+    public Combat playerCombat;
+    private float dmgFromTool = 0;
+
     public static ToolSlot instance;
     private void Awake()
     {
@@ -20,19 +23,26 @@ public class ToolSlot : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    public void ChangeTool(Mesh mesh, Material[] materials,float size, bool isTool = false)
+    public void ChangeTool(Mesh mesh, Material[] materials,float size, bool isTool = false, float dmg = 0)
     {
         meshFilter.mesh = mesh;
         meshRenderer.materials = materials;
         transform.localScale = new Vector3(size, size, size);
 
-        if(isTool)
+        dmgFromTool = dmg;
+
+        if (isTool)
+        {
+            playerCombat.strength += dmgFromTool;
             toolEquipped = true;
+        }
     }
 
-    public void RemoveTool()
+    public void RemoveTool(bool isTool = false)
     {
         meshFilter.mesh = null;
         toolEquipped = false;
+
+        playerCombat.strength -= dmgFromTool;
     }
 }

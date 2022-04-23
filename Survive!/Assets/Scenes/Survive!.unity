@@ -696,6 +696,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254302189}
   m_CullTransparentMesh: 1
+--- !u!114 &260777868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1085129682158623681, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+  m_PrefabInstance: {fileID: 7847657077550264260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f31dbeafbde0df49b28bf9b757a85f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &301275881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,7 +1813,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 27923891}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999997
+  m_Size: 0.9999996
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2072,7 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c018fafdee93d1945862628fa460f6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 10
+  spawnDelay: 1
   enemyPrefab: {fileID: 6747061703811238995, guid: e9bc07e80192a9d48a1f234952321ff3, type: 3}
 --- !u!4 &658628773
 Transform:
@@ -5440,5 +5451,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4274353173280216156, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: playerCombat
+      value: 
+      objectReference: {fileID: 260777868}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}

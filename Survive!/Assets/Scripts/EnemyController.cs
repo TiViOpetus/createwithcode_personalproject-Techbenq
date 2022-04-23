@@ -24,34 +24,27 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        try
+        float distance;
+        distance = Vector3.Distance(transform.position, player.position);
+
+        if (distance <= attackDistance)
         {
-            float distance;
-            distance = Vector3.Distance(transform.position, player.position);
-
-            if (distance <= attackDistance)
-            {
-                FaceTarget();
-                Attack();
-            }
-            else
-            {
-                agent.SetDestination(player.position);
-            }
-
-            if (agent.velocity.magnitude > 0.2f)
-            {
-                anim.SetFloat("Speed", 1);
-            }
-            else
-            {
-                anim.SetFloat("Speed", 0);
-            }
+            FaceTarget();
+            Attack();
         }
-        //Couldnt get catch working so added empty finally
-        finally
+        else
         {
+            if(agent.isOnNavMesh)
+                agent.SetDestination(player.position);
+        }
 
+        if (agent.velocity.magnitude > 0.2f)
+        {
+            anim.SetFloat("Speed", 1);
+        }
+        else
+        {
+            anim.SetFloat("Speed", 0);
         }
     }
 

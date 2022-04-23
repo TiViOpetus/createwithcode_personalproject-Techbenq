@@ -397,7 +397,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
-  dropSpot: {fileID: 3565125555781733366}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
   itemToDrop: {fileID: 6321597074011934031, guid: c213ff977a040c24197b2ab1c5995329, type: 3}
   dropChance: 85
   attackSpeed: 1

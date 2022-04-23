@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : Stats
 {
-    public Transform dropSpot;
-
+    public LayerMask groundMask;
     public GameObject itemToDrop;
     public float dropChance;
     public float attackSpeed;
@@ -22,7 +21,10 @@ public class EnemyStats : Stats
 
                 if (rand <= dropChance)
                 {
-                    Instantiate(itemToDrop, dropSpot.position , itemToDrop.transform.rotation);
+                    Vector3 spawnPos;
+                    Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hit, 10, groundMask);
+                    spawnPos = hit.point;
+                    Instantiate(itemToDrop, spawnPos , itemToDrop.transform.rotation);
                 }
             }
 
