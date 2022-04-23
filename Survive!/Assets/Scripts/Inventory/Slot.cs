@@ -71,6 +71,7 @@ public class Slot : MonoBehaviour
             if (slotItem.Use())
             {
                 RemoveItem(1);
+                if (itemAmount <= 0) ToolSlot.instance.RemoveTool();
             }
         }
     }

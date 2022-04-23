@@ -11,7 +11,6 @@ public class SetCraftingSlot : MonoBehaviour
     public GameObject requiredItems;
     public GameObject requiredItem;
 
-
     //Edits the crafting slot according to the items needed
     private void Start()
     {

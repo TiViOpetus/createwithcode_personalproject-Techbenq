@@ -128,4 +128,4 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: f627383f242518f4f8d144a9e48ae62b, type: 2}
   naturalResource: 1
   prefabNumber: 5
-  maxTakes: 3
+  maxTakes: 2

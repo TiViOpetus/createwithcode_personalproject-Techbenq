@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private bool canMove = true;
     private bool canPunch = true;
     private bool canRoll = true;
+
+    private bool crafting;
 
     private Animator anim;
 
@@ -79,9 +82,11 @@ public class PlayerController : MonoBehaviour
             {
                 if(SelectObject.current != null)
                     SelectObject.current.Interact();
+            }
 
-                else
-                    InventoryManager.instance.activeSlot.Use();
+            if (Input.GetMouseButtonDown(1))
+            {
+                InventoryManager.instance.activeSlot.Use();
             }
         }
 
@@ -93,7 +98,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if(canPunch)
+            crafting = EventSystem.current.IsPointerOverGameObject();
+
+            if(canPunch && !crafting)
                 if (SurvivalNeeds.instance.DrainStamina(punchStaminaNeed))
                 {
                     if (ToolSlot.instance.toolEquipped)

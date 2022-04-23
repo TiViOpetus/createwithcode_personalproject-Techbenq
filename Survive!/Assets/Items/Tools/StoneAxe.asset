@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f51d50afad285146b6d389088c8a11d, type: 3}
   m_Name: StoneAxe
   m_EditorClassIdentifier: 
-  itemLogo: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  itemName: StoneAxe
+  itemLogo: {fileID: 21300000, guid: b81cd050e7e80ad4ba76e42e7fc70161, type: 3}
+  itemName: Stone Axe
   maxStack: 1
   size: 1
-  itemMesh: {fileID: 0}
-  itemMaterials: []
+  itemMesh: {fileID: 7053128779965063925, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
+  itemMaterials:
+  - {fileID: 3349481329647215731, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
+  - {fileID: 963798294112862009, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
+  - {fileID: -1444460858095362738, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}

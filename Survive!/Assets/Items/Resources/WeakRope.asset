@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248cd22187f58ec4a8d0a71410a72956, type: 3}
   m_Name: WeakRope
   m_EditorClassIdentifier: 
-  itemLogo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemLogo: {fileID: 21300000, guid: 475caaf1b64688744a9235ffa9529c94, type: 3}
   itemName: Weak Rope
   maxStack: 2
-  size: 0
-  itemMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  size: 0.7
+  itemMesh: {fileID: 7227136747622878981, guid: f7d93bad9e7dbef498e568b08188583c, type: 3}
   itemMaterials:
-  - {fileID: -1580535799172915004, guid: f1ad51f0454cd8e46a0660bf7964b234, type: 3}
+  - {fileID: -2505642851634945670, guid: f7d93bad9e7dbef498e568b08188583c, type: 3}
