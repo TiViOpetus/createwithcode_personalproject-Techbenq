@@ -44,6 +44,15 @@ public class CampfireScript : Interactable
                 if(AddStick())
                     InventoryManager.instance.activeSlot.RemoveItem(1);
             }
+
+        if(InventoryManager.instance.activeSlot.slotItem is EatAble eatAble)
+        {
+            if (eatAble.cookAble)
+            {
+                InventoryManager.instance.RemoveItems(eatAble, 1);
+                InventoryManager.instance.AddItem(eatAble.cookedVersion);
+            }
+        }
     }
 
     //Removes a stick if none left game over

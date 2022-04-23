@@ -17,16 +17,30 @@ public class CraftingButton : MonoBehaviour
     //If lacks the item it adds it back
     public void Craft()
     {
+        int i = 0;
         foreach(CraftingRecipeItem it in itemToCraft.requiredItems)
         {
             if (!InventoryManager.instance.RemoveItems(it.itemNeeded, it.amountNeeded))
             {
+                AddBack(i);
                 return;
             }
+            i++;
         }
         InventoryManager.instance.AddItem(itemToCraft.itemToCraft);
 
         craftingButton.interactable = false;
         craftingButton.interactable = true;
+    }
+
+    private void AddBack(int amount)
+    {
+        for(int i = 0; i < amount; i++)
+        {
+            for(int ii = 0; ii < itemToCraft.requiredItems[i].amountNeeded; i++)
+            {
+                InventoryManager.instance.AddItem(itemToCraft.requiredItems[i].itemNeeded);
+            }
+        }
     }
 }

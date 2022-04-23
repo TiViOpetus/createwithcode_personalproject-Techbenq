@@ -133,11 +133,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void allowPunch()
-    {
-        canPunch = true;
-    }
-
     // Turns the player with mouse smoothly
     private void LateUpdate()
     {
@@ -149,6 +144,11 @@ public class PlayerController : MonoBehaviour
         turnSpeed = Mathf.Clamp(turnSpeed, -1, 1);
 
         anim.SetFloat("TurnSpeed", turnSpeed);
+    }
+
+    private void allowPunch()
+    {
+        canPunch = true;
     }
 
     public void AllowMovement()
