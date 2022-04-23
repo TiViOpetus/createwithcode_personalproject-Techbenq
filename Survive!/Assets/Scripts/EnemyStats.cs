@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyStats : Stats
 {
+    public Transform dropSpot;
+
     public GameObject itemToDrop;
     public float dropChance;
     public float attackSpeed;
@@ -20,7 +22,7 @@ public class EnemyStats : Stats
 
                 if (rand <= dropChance)
                 {
-                    Instantiate(itemToDrop, transform.position + Vector3.down * 0.85f, itemToDrop.transform.rotation);
+                    Instantiate(itemToDrop, dropSpot.position , itemToDrop.transform.rotation);
                 }
             }
 
