@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f51d50afad285146b6d389088c8a11d, type: 3}
+  m_Name: StonePickaxe
+  m_EditorClassIdentifier: 
+  itemLogo: {fileID: 21300000, guid: c4478b3fa16d9114a834b009fe6055ff, type: 3}
+  itemName: Stone Pick
+  maxStack: 1
+  size: 2
+  itemMesh: {fileID: 997706582111207143, guid: 1fbe9001d07da7b45869ec21dfcf26b9, type: 3}
+  itemMaterials:
+  - {fileID: -1444460858095362738, guid: 1fbe9001d07da7b45869ec21dfcf26b9, type: 3}
+  - {fileID: 963798294112862009, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
+  - {fileID: 963798294112862009, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
+  toolType: 1
+  dmg: 5

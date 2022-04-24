@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7cb7fca2e340e042b7953c1da415cfd, type: 3}
+  m_Name: StonePickaxe
+  m_EditorClassIdentifier: 
+  requiredItems:
+  - itemNeeded: {fileID: 11400000, guid: b66dc1501dff0ff40a2d434c938426ab, type: 2}
+    amountNeeded: 3
+  - itemNeeded: {fileID: 11400000, guid: 031b52c046be72c4f84625cc94f95a30, type: 2}
+    amountNeeded: 2
+  itemToCraft: {fileID: 11400000, guid: ae4b01ce19fa9b44595cbe8a9bab19c8, type: 2}

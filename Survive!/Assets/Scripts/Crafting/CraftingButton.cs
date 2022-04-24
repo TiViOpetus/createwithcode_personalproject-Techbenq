@@ -37,7 +37,7 @@ public class CraftingButton : MonoBehaviour
     {
         for(int i = 0; i < amount; i++)
         {
-            for(int ii = 0; ii < itemToCraft.requiredItems[i].amountNeeded; i++)
+            for(int ii = 0; ii < itemToCraft.requiredItems[i].amountNeeded; ii++)
             {
                 InventoryManager.instance.AddItem(itemToCraft.requiredItems[i].itemNeeded);
             }

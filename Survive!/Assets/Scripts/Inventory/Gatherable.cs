@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gatherable : MonoBehaviour
 {
+    public ToolType toolTypeNeeded;
+
     public int prefabIndex;
     public Item[] itemsQuaranteed;
     public GatherItem[] itemsWithChance;
@@ -11,26 +13,29 @@ public class Gatherable : MonoBehaviour
 
     public void Gather()
     {
-        foreach(Item item in itemsQuaranteed)
+        if(ToolSlot.instance.currentToolType == toolTypeNeeded)
         {
-            InventoryManager.instance.AddItem(item);
-        }
-
-        foreach (GatherItem item in itemsWithChance)
-        {
-            float rand = Random.Range(0, 100);
-            if (rand <= item.dropChance)
+            foreach (Item item in itemsQuaranteed)
             {
-                InventoryManager.instance.AddItem(item.item);
+                InventoryManager.instance.AddItem(item);
             }
-        }
 
-        health -= 1;
-        if(health <= 0)
-        {
-            ObjectGeneration.instance.availableVerts.Add(transform.position);
-            ObjectGeneration.instance.prefabs[prefabIndex].amount--;
-            Destroy(gameObject);
+            foreach (GatherItem item in itemsWithChance)
+            {
+                float rand = Random.Range(0, 100);
+                if (rand <= item.dropChance)
+                {
+                    InventoryManager.instance.AddItem(item.item);
+                }
+            }
+
+            health -= 1;
+            if (health <= 0)
+            {
+                ObjectGeneration.instance.availableVerts.Add(transform.position);
+                ObjectGeneration.instance.prefabs[prefabIndex].amount--;
+                Destroy(gameObject);
+            }
         }
     }
 }

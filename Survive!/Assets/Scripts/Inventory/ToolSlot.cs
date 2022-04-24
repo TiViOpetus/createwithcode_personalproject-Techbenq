@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ToolSlot : MonoBehaviour
 {
+    public ToolType currentToolType;
     public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;
     public bool toolEquipped = false;
@@ -23,7 +24,7 @@ public class ToolSlot : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    public void ChangeTool(Mesh mesh, Material[] materials,float size, bool isTool = false, float dmg = 0)
+    public void ChangeTool(Mesh mesh, Material[] materials,float size, bool isTool = false, float dmg = 0, ToolType type = ToolType.Axe)
     {
         meshFilter.mesh = mesh;
         meshRenderer.materials = materials;
@@ -33,6 +34,7 @@ public class ToolSlot : MonoBehaviour
 
         if (isTool)
         {
+            currentToolType = type;
             playerCombat.strength += dmgFromTool;
             toolEquipped = true;
         }

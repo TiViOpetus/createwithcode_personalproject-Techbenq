@@ -5100,7 +5100,7 @@ MonoBehaviour:
   - {fileID: 8645666359717223914}
   - {fileID: 8386688739393423096}
   - {fileID: 3004788314880437702}
-  burnDelay: 10
+  burnDelay: 15
   minInner: 20
   maxInner: 80
   minOuter: 40
