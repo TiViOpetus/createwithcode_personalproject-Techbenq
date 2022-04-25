@@ -12,7 +12,11 @@ public class Torch : Item
         {
             if(SelectObject.current is CampfireScript camp)
             {
-                if (camp.Light()) return true;
+                if (camp.Light()) 
+                {
+                    Unactivate();
+                    return true; 
+                }
             }
         }
         return false;

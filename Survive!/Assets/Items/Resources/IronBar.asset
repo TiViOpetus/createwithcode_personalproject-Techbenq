@@ -15,7 +15,7 @@ MonoBehaviour:
   itemLogo: {fileID: 21300000, guid: 284c8785a64dcc548b9b90e152d0738b, type: 3}
   itemName: Iron Bar
   maxStack: 2
-  size: 1
+  size: 0.4
   itemMesh: {fileID: -7860970787427425400, guid: c773f5dd538ab3749b580886fdc993b4, type: 3}
   itemMaterials:
   - {fileID: -876546973899608171, guid: c773f5dd538ab3749b580886fdc993b4, type: 3}

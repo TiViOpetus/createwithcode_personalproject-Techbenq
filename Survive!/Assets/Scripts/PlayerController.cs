@@ -88,6 +88,10 @@ public class PlayerController : MonoBehaviour
             {
                 InventoryManager.instance.activeSlot.Use();
             }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                InventoryManager.instance.activeSlot.RemoveItem(10, true);
+            }
         }
 
         if (Input.mouseScrollDelta.y != 0)

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemLogo: {fileID: 21300000, guid: 8403d08ca5dd0db4a982ad3efc903911, type: 3}
   itemName: Stone
-  maxStack: 2
+  maxStack: 4
   size: 8
   itemMesh: {fileID: 4300000, guid: 3a775dc2c1a334b45a5667a56fe92c23, type: 3}
   itemMaterials:

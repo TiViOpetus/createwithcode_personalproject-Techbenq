@@ -16,10 +16,10 @@ public class CampfireScript : Interactable
     public float burnDelay;
 
     public float minInner, maxInner, minOuter, maxOuter;
-    private Light campfireLight;
+    public Light campfireLight;
 
-    private int maxSticks;
-    private int burningSticks = 0;
+    public int maxSticks;
+    public int burningSticks = 0;
 
     private void Start()
     {

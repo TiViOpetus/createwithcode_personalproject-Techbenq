@@ -29,7 +29,6 @@ public class PlaceableItem : Item
         KeepObjectOnGround.instance.meshFilter.mesh = itemMesh;
         KeepObjectOnGround.instance.meshCollider.sharedMesh = itemMesh;
         KeepObjectOnGround.instance.meshCollider.enabled = true;
-
     }
     public override void Unactivate()
     {

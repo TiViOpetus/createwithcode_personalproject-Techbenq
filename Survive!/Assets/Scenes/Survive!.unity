@@ -1375,6 +1375,7 @@ MonoBehaviour:
   craftingSlot: {fileID: 4083799788250974093, guid: 255abc45f13928345a4206842481eddd, type: 3}
   recipes:
   - {fileID: 11400000, guid: 6794efc99edf0434394b070c73bfc52d, type: 2}
+  - {fileID: 11400000, guid: 90fb6fc358433b74ca9ba42a7b87eb4e, type: 2}
   - {fileID: 11400000, guid: 7e8388146833dec458c27e5dbbdfe57b, type: 2}
   - {fileID: 11400000, guid: a95beba1e1c737c4b822b5c5b4a6fe0b, type: 2}
   - {fileID: 11400000, guid: 561dfc7a57c783b4dbee89cfe7a71164, type: 2}
@@ -5463,6 +5464,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 311382996, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 311382996, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 311382996, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: godMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: coldSlid
       value: 
