@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3779414407234192788
 Transform:
@@ -99,6 +99,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: d5779f11ecd4ac54dbb01725a83d4cd2, type: 2}
   naturalResource: 1
   prefabNumber: 4
+  maxTakes: 1
 --- !u!65 &7342712277790623672
 BoxCollider:
   m_ObjectHideFlags: 0

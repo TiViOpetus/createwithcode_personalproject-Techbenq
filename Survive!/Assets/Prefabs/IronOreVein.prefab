@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 7069568764085527209}
   - component: {fileID: 1375299303631984701}
   - component: {fileID: 3337436860762727186}
+  - component: {fileID: -7577918032136149169}
   m_Layer: 0
   m_Name: IronOreVein
   m_TagString: Gatherable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7069568764087820361
 Transform:
@@ -116,3 +117,19 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: b66dc1501dff0ff40a2d434c938426ab, type: 2}
     dropChance: 20
   health: 4
+--- !u!208 &-7577918032136149169
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7069568764087467113}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.527, y: 0.563, z: 0.47700003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.039, y: 0.55700004, z: 0.011000001}
+  m_TimeToStationary: 0.5
