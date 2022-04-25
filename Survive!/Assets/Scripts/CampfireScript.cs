@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CampfireScript : Interactable
 {
+    public bool onFire = true;
+
     public ParticleSystem fireEffect;
 
     public float maxRadius;
@@ -38,22 +40,49 @@ public class CampfireScript : Interactable
     public override void Interact()
     {
         base.Interact();
-        if (burningSticks >= maxSticks) return;
-            if(InventoryManager.instance.activeSlot.slotItem == stickItem)
-            {
-                if(AddStick())
-                    InventoryManager.instance.activeSlot.RemoveItem(1);
-            }
 
-        if(InventoryManager.instance.activeSlot.slotItem is EatAble eatAble)
+        if (onFire)
         {
-            if (eatAble.cookAble)
+            if (InventoryManager.instance.activeSlot.slotItem is EatAble eatAble)
             {
-                InventoryManager.instance.RemoveItems(eatAble, 1);
-                InventoryManager.instance.AddItem(eatAble.cookedVersion);
+                if (eatAble.cookAble)
+                {
+                    InventoryManager.instance.RemoveItems(eatAble, 1);
+                    InventoryManager.instance.AddItem(eatAble.cookedVersion);
+                }
+            }
+            if (InventoryManager.instance.activeSlot.slotItem is Torch torch)
+            {
+                torch.LightUp();
             }
         }
+
+        if (burningSticks >= maxSticks) return;
+
+        if(InventoryManager.instance.activeSlot.slotItem == stickItem)
+        {
+            if(AddStick())
+                InventoryManager.instance.activeSlot.RemoveItem(1);
+        }
     }
+
+    //If there are sticks and not already on fire relights the campfire
+    public bool Light()
+    {
+        if(burningSticks > 0 && !onFire)
+        {
+            onFire = true;
+
+            fireEffect.Play();
+            campfireLight.intensity = 100;
+            UpdateCamp();
+            InvokeRepeating("BurnStick", burnDelay * 1.5f, burnDelay);
+
+            return true;
+        }
+        return false;
+    }
+
 
     //Removes a stick if none left game over
     private void BurnStick()
@@ -72,7 +101,6 @@ public class CampfireScript : Interactable
     {
         if (burningSticks >= maxSticks)
             return false;
-        if (burningSticks <= 0) return false;
 
         burningSticks += 1;
         UpdateCamp();
@@ -95,17 +123,23 @@ public class CampfireScript : Interactable
                 sticks[i].SetActive(false);
         }
 
-        float procent = (float)burningSticks / (float)maxSticks;
+        if (onFire)
+        {
+            float procent = (float)burningSticks / (float)maxSticks;
 
-        campfireLight.spotAngle = Mathf.Clamp(maxOuter * procent * 1.25f, minOuter, maxOuter);
-        campfireLight.innerSpotAngle = Mathf.Clamp(maxInner * procent, minInner, maxInner);
+            campfireLight.spotAngle = Mathf.Clamp(maxOuter * procent * 1.25f, minOuter, maxOuter);
+            campfireLight.innerSpotAngle = Mathf.Clamp(maxInner * procent, minInner, maxInner);
 
-        triggerCollider.radius = maxRadius * procent;
+            triggerCollider.radius = maxRadius * procent;
 
-        ParticleSystem.MainModule main = fireEffect.main;
-        main.startLifetime = 5 * procent;
-        
-        if (burningSticks == 0)
-            campfireLight.intensity = 0;
+            ParticleSystem.MainModule main = fireEffect.main;
+            main.startLifetime = 5 * procent;
+
+            if (burningSticks == 0)
+            {
+                onFire = false;
+                campfireLight.intensity = 0;
+            }
+        }
     }
 }

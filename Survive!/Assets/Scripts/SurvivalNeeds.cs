@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SurvivalNeeds : Stats
 {
+    public bool torchActive;
+
     public bool godMode;
 
     public static bool withinRadius = true;
@@ -78,8 +80,16 @@ public class SurvivalNeeds : Stats
             {
                 if (currentWarmth > 0)
                 {
-                    if(!DayNightCycle.isDay) currentWarmth -= maxWarmth * 0.005f;
-                    else currentWarmth -= maxWarmth * 0.002f;
+                    if (torchActive)
+                    {
+                        if (!DayNightCycle.isDay) currentWarmth -= maxWarmth * 0.005f  / 2;
+                        else currentWarmth -= maxWarmth * 0.002f / 2;
+                    }
+                    else
+                    {
+                        if (!DayNightCycle.isDay) currentWarmth -= maxWarmth * 0.005f;
+                        else currentWarmth -= maxWarmth * 0.002f;
+                    }
 
                     coldSlid.value = currentWarmth / maxWarmth;
                 }

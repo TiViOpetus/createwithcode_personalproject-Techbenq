@@ -5090,6 +5090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb0b8de8a38caa47a6f962bc9d617d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onFire: 1
   fireEffect: {fileID: 3821090050127042936}
   maxRadius: 35
   triggerCollider: {fileID: 1347761030587547065}
@@ -5100,7 +5101,7 @@ MonoBehaviour:
   - {fileID: 8645666359717223914}
   - {fileID: 8386688739393423096}
   - {fileID: 3004788314880437702}
-  burnDelay: 15
+  burnDelay: 5
   minInner: 20
   maxInner: 80
   minOuter: 40

@@ -40,7 +40,7 @@ public class ToolSlot : MonoBehaviour
         }
     }
 
-    public void RemoveTool(bool isTool = false)
+    public void RemoveTool()
     {
         meshFilter.mesh = null;
         toolEquipped = false;

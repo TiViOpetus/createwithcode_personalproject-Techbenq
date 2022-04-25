@@ -696,17 +696,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254302189}
   m_CullTransparentMesh: 1
---- !u!114 &260777868 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1085129682158623681, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
-  m_PrefabInstance: {fileID: 7847657077550264260}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f31dbeafbde0df49b28bf9b757a85f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &301275881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1000,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383043222}
   m_CullTransparentMesh: 1
+--- !u!1 &387755107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2742928715974255786, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+  m_PrefabInstance: {fileID: 7847657077550264260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &392368982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1378,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7e8388146833dec458c27e5dbbdfe57b, type: 2}
   - {fileID: 11400000, guid: a95beba1e1c737c4b822b5c5b4a6fe0b, type: 2}
   - {fileID: 11400000, guid: 561dfc7a57c783b4dbee89cfe7a71164, type: 2}
+  - {fileID: 11400000, guid: 5b915640048e9c745b3245397a3a16d1, type: 2}
 --- !u!1 &557178597
 GameObject:
   m_ObjectHideFlags: 0
@@ -5109,6 +5104,10 @@ MonoBehaviour:
     spawnChance: 2
     amount: 0
     maxAmount: 0
+  - prefab: {fileID: 7069568764087467113, guid: d80b593099816204d8bb854ee4ad994f, type: 3}
+    spawnChance: 2
+    amount: 0
+    maxAmount: 0
   availableVerts: []
   player: {fileID: 1299057524}
   parent: {fileID: 456370938}
@@ -5528,9 +5527,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4274353173280216156, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
-      propertyPath: playerCombat
+    - target: {fileID: 2742928715974255786, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045014509440885710, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: burnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045014509440885710, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: burnDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045014509440885710, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: torchFire
       value: 
-      objectReference: {fileID: 260777868}
+      objectReference: {fileID: 387755107}
+    - target: {fileID: 4407005188865736525, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_Range
+      value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407005188865736525, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_Intensity
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}

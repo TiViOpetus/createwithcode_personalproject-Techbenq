@@ -56,7 +56,9 @@ public class InventoryManager : MonoBehaviour
         {
             if (sl.slotItem == item)
             {
-                leftOvers = sl.RemoveItem(leftOvers);
+                if(sl == activeSlot) leftOvers = sl.RemoveItem(leftOvers, true);
+                else leftOvers = sl.RemoveItem(leftOvers);
+
                 if(leftOvers <= 0)
                 {
                     return true;

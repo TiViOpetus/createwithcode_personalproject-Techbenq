@@ -43,7 +43,7 @@ public class Slot : MonoBehaviour
     
     //Removes given amount of items from the slot
     //Returns 0 if given amount is removed
-    public int RemoveItem(int amount)
+    public int RemoveItem(int amount, bool activeSlot = false)
     {
         if(itemAmount <= amount)
         {
@@ -51,6 +51,7 @@ public class Slot : MonoBehaviour
             itemAmount = 0;
             slotText.text = "";
 
+            if (activeSlot) slotItem.Unactivate();
             slotItem = null;
             slotImage.enabled = false;
 
