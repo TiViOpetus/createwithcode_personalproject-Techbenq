@@ -49,7 +49,7 @@ public class SurvivalNeeds : Stats
         }
     }
 
-    //Take Damage
+    //Take Damage if godmode then dont
     public override void TakeDMG(float dmg)
     {
         if (godMode)
@@ -60,7 +60,8 @@ public class SurvivalNeeds : Stats
     }
 
 
-    //Makes the player get cold
+    //Makes the player get cold more cold at night
+    //if player is within campfire collider it will warm up instead
     private IEnumerator GetCold()
     {
 
@@ -82,6 +83,7 @@ public class SurvivalNeeds : Stats
                 {
                     if (torchActive)
                     {
+                        //get less cold if you have torch lit
                         if (!DayNightCycle.isDay) currentWarmth -= maxWarmth * 0.005f  / 2;
                         else currentWarmth -= maxWarmth * 0.002f / 2;
                     }
@@ -102,6 +104,7 @@ public class SurvivalNeeds : Stats
         }
     }
 
+    //Food calls this and adds stats
     public void Eat(float value)
     {
         currentHunger = Mathf.Clamp(currentHunger + value, 0, maxHunger);
@@ -142,7 +145,7 @@ public class SurvivalNeeds : Stats
         return true;
     }
 
-    //Gain stamina at steadily
+    //Gain stamina at steady rate
     public void GainStamina()
     {
         if(currentStamina < 100)

@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
         player = GameObject.Find("Human").GetComponent<Transform>();
     }
 
+    //if enemy is in attacking distance it will attack otherwise go towards player
     private void Update()
     {
         float distance;
@@ -67,6 +68,8 @@ public class EnemyController : MonoBehaviour
             Invoke("AllowAttack", stats.attackSpeed);
         }
     }
+
+    //Allows enemy to attack after the cooldown
     private void AllowAttack()
     {
         canAttack = true;

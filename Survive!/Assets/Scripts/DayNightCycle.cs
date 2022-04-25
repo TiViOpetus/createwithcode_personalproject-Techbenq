@@ -59,6 +59,7 @@ public class DayNightCycle : MonoBehaviour
         UpdateLightning();
     }
 
+    //Updates lightning settings
     private void UpdateLightning()
     {
         RenderSettings.ambientLight = ambient.Evaluate(dayProcent);

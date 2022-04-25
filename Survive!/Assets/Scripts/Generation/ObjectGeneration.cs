@@ -96,7 +96,7 @@ public class ObjectGeneration : MonoBehaviour
     }
 }
 
-
+//small class for prefabs to spawn
 [System.Serializable]
 public class Prefab
 {

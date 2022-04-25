@@ -15,6 +15,9 @@ public class SelectObject : MonoBehaviour
     private bool brighter = true;
 
     private int maxBrightness;
+
+    //Object can only trigger on interactable layers
+    //Sets current interactable to one in the collider
     private void OnTriggerStay(Collider other)
     {
         if (current == null)
@@ -27,6 +30,8 @@ public class SelectObject : MonoBehaviour
             else maxBrightness = 1;
         }
     }
+
+    //When exits the interactable collider sets all to defaults
     private void OnTriggerExit(Collider other)
     {
         if(currentMat != null)
@@ -36,11 +41,11 @@ public class SelectObject : MonoBehaviour
         currentMat = null;
     }
 
+    //Make object go brighter then darker 
     private void Update()
     {
         if(current != null)
         {
-            //Make object go brighter then darker 
             if (brighter)
             {
                 currentMat.color = Color.Lerp(currentMat.color, Color.white * maxBrightness, changeSpeed * Time.deltaTime);

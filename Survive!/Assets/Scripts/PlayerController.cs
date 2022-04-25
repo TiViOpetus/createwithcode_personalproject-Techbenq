@@ -146,22 +146,26 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("TurnSpeed", turnSpeed);
     }
 
+    //allows punching this gets called in animation
     private void allowPunch()
     {
         canPunch = true;
     }
 
+    //Same as punching but for movement
     public void AllowMovement()
     {
         anim.applyRootMotion = false;
         canMove = true;
     }
 
+    //Same but for rolls
     private void AllowRoll()
     {
         canRoll = true;
     }
 
+    //if you enter campfire collider it will set the variable
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Campfire"))

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    //Simple class for stats
+
     public float maxHealth;
     public float currentHealth;
 

@@ -6,6 +6,7 @@ public class Combat : MonoBehaviour
 {
     public float strength;
 
+    //Ontrigger make other take dmg
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Entity") || other.CompareTag("Human"))

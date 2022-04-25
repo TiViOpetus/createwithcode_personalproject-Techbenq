@@ -33,6 +33,7 @@ public class CraftingButton : MonoBehaviour
         craftingButton.interactable = true;
     }
 
+    //adds back the removed items
     private void AddBack(int amount)
     {
         for(int i = 0; i < amount; i++)

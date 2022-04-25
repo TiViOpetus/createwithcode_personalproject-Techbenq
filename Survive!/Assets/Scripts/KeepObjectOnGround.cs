@@ -54,6 +54,7 @@ public class KeepObjectOnGround : MonoBehaviour
         return false;
     }
 
+    //Disables object when not active
     public void DisableObject()
     {
         meshFilter.mesh = null;
@@ -62,6 +63,7 @@ public class KeepObjectOnGround : MonoBehaviour
         meshRenderer.material.color = Color.white;
     }
 
+    //if object is inside some other collider it cant be placed
     private void OnTriggerStay(Collider other)
     {
         canPlace = false;

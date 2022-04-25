@@ -9,7 +9,7 @@ public class EnemyStats : Stats
     public float dropChance;
     public float attackSpeed;
 
-    //Takes damage
+    //Takes damage and rolls for item drop when dies
     public override void TakeDMG(float dmg)
     {
         currentHealth -= dmg;

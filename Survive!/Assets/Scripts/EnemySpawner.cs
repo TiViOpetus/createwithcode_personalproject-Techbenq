@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
         InvokeRepeating("SummonEnemy", spawnDelay * 2, spawnDelay);
     }
 
+    //Summons an enemy if its night time in random available location
     void SummonEnemy()
     {
         if (!DayNightCycle.isDay)

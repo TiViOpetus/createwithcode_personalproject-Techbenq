@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
+    //Simple script to add score every second
+    //And certain amount if needed
+
     private Text scoreText;
     private float score;
     private void Start()
