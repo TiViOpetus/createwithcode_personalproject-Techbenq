@@ -5,6 +5,8 @@ using UnityEngine;
 public class ToolSlot : MonoBehaviour
 {
     public ToolType currentToolType;
+    public int currentToolLevel;
+
     public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;
     public bool toolEquipped = false;
@@ -24,17 +26,19 @@ public class ToolSlot : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    public void ChangeTool(Mesh mesh, Material[] materials,float size, bool isTool = false, float dmg = 0, ToolType type = ToolType.Axe)
+    public void ChangeTool(Mesh mesh, Material[] materials,float size, bool isTool = false, Tool tool = null)
     {
         meshFilter.mesh = mesh;
         meshRenderer.materials = materials;
         transform.localScale = new Vector3(size, size, size);
 
-        dmgFromTool = dmg;
+        dmgFromTool = tool.dmg;
 
         if (isTool)
         {
-            currentToolType = type;
+            currentToolLevel = tool.toolLevel;
+
+            currentToolType = tool.toolType;
             playerCombat.strength += dmgFromTool;
             toolEquipped = true;
         }
@@ -44,6 +48,7 @@ public class ToolSlot : MonoBehaviour
     {
         meshFilter.mesh = null;
         toolEquipped = false;
+        currentToolLevel = 0;
 
         playerCombat.strength -= dmgFromTool;
     }

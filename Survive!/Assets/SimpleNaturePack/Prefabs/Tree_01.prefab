@@ -125,10 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4114814da7ab6b049b4771a0895d0b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolTypeNeeded: 0
+  toolLevelRequired: 1
   prefabIndex: 1
   itemsQuaranteed:
   - {fileID: 11400000, guid: 031b52c046be72c4f84625cc94f95a30, type: 2}
   itemsWithChance:
   - item: {fileID: 11400000, guid: d5779f11ecd4ac54dbb01725a83d4cd2, type: 2}
     dropChance: 20
-  health: 3
+  health: 4

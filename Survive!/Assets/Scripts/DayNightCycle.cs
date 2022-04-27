@@ -15,7 +15,7 @@ public class DayNightCycle : MonoBehaviour
     public float rotateSpeed;
     public float dayLength;
 
-    public int dayNum = 1;
+    public static int dayNum = 1;
     private bool nextDay = false;
 
     private float currentTime;

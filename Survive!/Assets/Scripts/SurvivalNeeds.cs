@@ -56,7 +56,13 @@ public class SurvivalNeeds : Stats
             return;
 
         base.TakeDMG(dmg);
+        currentHealth -= dmg;
         healthSlid.value = currentHealth / maxHealth;
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 

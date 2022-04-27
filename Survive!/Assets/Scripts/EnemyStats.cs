@@ -9,9 +9,21 @@ public class EnemyStats : Stats
     public float dropChance;
     public float attackSpeed;
 
+
+    private void Start()
+    {
+        if(DayNightCycle.dayNum > 1)
+        {
+            currentHealth = maxHealth * DayNightCycle.dayNum / 0.5f;
+            return;
+        }
+        currentHealth = maxHealth;
+    }
+
     //Takes damage and rolls for item drop when dies
     public override void TakeDMG(float dmg)
     {
+        base.TakeDMG(dmg);
         currentHealth -= dmg;
         if (currentHealth <= 0)
         {
@@ -22,7 +34,7 @@ public class EnemyStats : Stats
                 if (rand <= dropChance)
                 {
                     Vector3 spawnPos;
-                    Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hit, 10, groundMask);
+                    Physics.Raycast(transform.position + Vector3.up * 2.5f, Vector3.down, out RaycastHit hit, 10, groundMask);
                     spawnPos = hit.point;
                     Instantiate(itemToDrop, spawnPos , itemToDrop.transform.rotation);
                 }

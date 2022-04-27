@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTypeNeeded: 1
+  toolLevelRequired: 1
   prefabIndex: 0
   itemsQuaranteed:
   - {fileID: 11400000, guid: b66dc1501dff0ff40a2d434c938426ab, type: 2}
   itemsWithChance: []
-  health: 3
+  health: 4

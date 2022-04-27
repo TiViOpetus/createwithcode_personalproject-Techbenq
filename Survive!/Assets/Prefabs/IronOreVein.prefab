@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTypeNeeded: 1
+  toolLevelRequired: 1
   prefabIndex: 7
   itemsQuaranteed:
   - {fileID: 11400000, guid: 7cd10477dde8f85488eace20deb456b2, type: 2}
