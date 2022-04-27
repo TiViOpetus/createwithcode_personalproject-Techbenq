@@ -2062,7 +2062,6 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   rotateSpeed: 0.1
   dayLength: 24
-  dayNum: 1
 --- !u!1 &658628771
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5538,26 @@ PrefabInstance:
     - target: {fileID: 994045995630712713, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045436073628827455, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045436073628827455, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045436073628827455, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045436073628827455, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: -0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189963100443882161, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
