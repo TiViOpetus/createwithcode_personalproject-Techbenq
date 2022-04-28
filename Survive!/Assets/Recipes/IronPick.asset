@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7cb7fca2e340e042b7953c1da415cfd, type: 3}
-  m_Name: Iron Sword
+  m_Name: IronPick
   m_EditorClassIdentifier: 
   requiredItems:
   - itemNeeded: {fileID: 11400000, guid: deab2b08ff81e2a488ca0794bfb1f821, type: 2}
     amountNeeded: 3
   - itemNeeded: {fileID: 11400000, guid: 031b52c046be72c4f84625cc94f95a30, type: 2}
     amountNeeded: 3
-  itemToCraft: {fileID: 11400000, guid: 41e3b0bedefaeae4ba17074ca52b6df2, type: 2}
+  itemToCraft: {fileID: 11400000, guid: ef41948fc135bcf4c9d67bee734386b4, type: 2}

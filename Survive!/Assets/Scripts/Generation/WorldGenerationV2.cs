@@ -8,7 +8,8 @@ public class WorldGenerationV2 : MonoBehaviour
     public int xSize;
     public int zSize;
 
-    public int seed;
+    public static bool randomSeed = true;
+    public static int seed;
 
     public int campMinSpace;
 
@@ -32,7 +33,7 @@ public class WorldGenerationV2 : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
 
         //Create Mesh
-        seed = Random.Range(1, 99999);
+        if(randomSeed) seed = Random.Range(1, 99999);
         CreateVerts();
         GetTriangles();
         SetVertColors();

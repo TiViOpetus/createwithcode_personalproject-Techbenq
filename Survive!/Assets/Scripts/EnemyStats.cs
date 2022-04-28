@@ -14,7 +14,7 @@ public class EnemyStats : Stats
     {
         if(DayNightCycle.dayNum > 1)
         {
-            currentHealth = maxHealth * DayNightCycle.dayNum / 0.5f;
+            currentHealth = maxHealth * DayNightCycle.dayNum / 0.75f;
             return;
         }
         currentHealth = maxHealth;

@@ -21,5 +21,6 @@ MonoBehaviour:
   - {fileID: -1444460858095362738, guid: 1fbe9001d07da7b45869ec21dfcf26b9, type: 3}
   - {fileID: 963798294112862009, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
   - {fileID: 963798294112862009, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
+  toolLevel: 1
   toolType: 1
   dmg: 2

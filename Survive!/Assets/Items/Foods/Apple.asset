@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemLogo: {fileID: 21300000, guid: c486ed3ae54e79f459726b52b399e175, type: 3}
   itemName: Apple
-  maxStack: 3
+  maxStack: 4
   size: 0.7
   itemMesh: {fileID: -472147775963580301, guid: 6ed46726ab7770f4f9690fa77487b4b6, type: 3}
   itemMaterials:
@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 3291926621068253372, guid: 6ed46726ab7770f4f9690fa77487b4b6, type: 3}
   cookAble: 0
   cookedVersion: {fileID: 0}
-  hungerValue: 10
+  hungerValue: 20

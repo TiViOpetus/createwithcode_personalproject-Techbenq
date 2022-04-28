@@ -39,6 +39,8 @@ public class ObjectGeneration : MonoBehaviour
                         random = Random.Range(0, 360);
                         temp.transform.Rotate(Vector3.up, random);
 
+                        
+
                         random = Random.Range(temp.transform.localScale.x / 1.5f, temp.transform.localScale.x * 1.5f);
                         temp.transform.localScale = new Vector3(random, random, random);
 

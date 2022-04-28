@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f51d50afad285146b6d389088c8a11d, type: 3}
-  m_Name: IronSword
+  m_Name: IronPick
   m_EditorClassIdentifier: 
-  itemLogo: {fileID: 21300000, guid: 65823958732725d41adfc0c436f17ac6, type: 3}
-  itemName: Iron Sword
+  itemLogo: {fileID: 21300000, guid: f97c57e8af2e9814f86168026e422400, type: 3}
+  itemName: Iron Pick
   maxStack: 1
-  size: 1.2
-  itemMesh: {fileID: 4686849319519084627, guid: e1d92e5f56143564cb45b347bf490d54, type: 3}
+  size: 1
+  itemMesh: {fileID: 4987632398419711469, guid: 064d162154ca397468b3a7d3e8be5d78, type: 3}
   itemMaterials:
+  - {fileID: -1444460858095362738, guid: 064d162154ca397468b3a7d3e8be5d78, type: 3}
   - {fileID: -4973734387028869240, guid: 0ef1ee6bad4891a479806a7133ea3d3e, type: 3}
-  - {fileID: -7098565394360792512, guid: e1d92e5f56143564cb45b347bf490d54, type: 3}
   toolLevel: 2
-  toolType: 2
-  dmg: 10
+  toolType: 1
+  dmg: 5

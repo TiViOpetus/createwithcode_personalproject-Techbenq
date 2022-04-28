@@ -32,10 +32,11 @@ public class ToolSlot : MonoBehaviour
         meshRenderer.materials = materials;
         transform.localScale = new Vector3(size, size, size);
 
-        dmgFromTool = tool.dmg;
+        dmgFromTool = 0;
 
         if (isTool)
         {
+            dmgFromTool = tool.dmg;
             currentToolLevel = tool.toolLevel;
 
             currentToolType = tool.toolType;
