@@ -15,7 +15,7 @@ MonoBehaviour:
   itemLogo: {fileID: 21300000, guid: 65823958732725d41adfc0c436f17ac6, type: 3}
   itemName: Iron Sword
   maxStack: 1
-  size: 1.2
+  size: 1.35
   itemMesh: {fileID: 4686849319519084627, guid: e1d92e5f56143564cb45b347bf490d54, type: 3}
   itemMaterials:
   - {fileID: -4973734387028869240, guid: 0ef1ee6bad4891a479806a7133ea3d3e, type: 3}

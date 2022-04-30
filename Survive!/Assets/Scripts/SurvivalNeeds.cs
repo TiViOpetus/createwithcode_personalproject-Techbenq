@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SurvivalNeeds : Stats
 {
+    public bool rolling = false;
     public bool torchActive;
 
     public bool godMode;
@@ -52,7 +53,7 @@ public class SurvivalNeeds : Stats
     //Take Damage if godmode then dont
     public override void TakeDMG(float dmg)
     {
-        if (godMode)
+        if (godMode || rolling)
             return;
 
         base.TakeDMG(dmg);

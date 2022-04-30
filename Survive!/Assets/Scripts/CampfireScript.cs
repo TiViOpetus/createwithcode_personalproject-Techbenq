@@ -33,7 +33,7 @@ public class CampfireScript : Interactable
         maxSticks = sticks.Length;
 
         UpdateCamp();
-        InvokeRepeating("BurnStick", burnDelay * 2, burnDelay);
+        InvokeRepeating("BurnStick", burnDelay * 3, burnDelay);
     }
 
     //Interacts with campfire removes a stick and adds it to the campfire

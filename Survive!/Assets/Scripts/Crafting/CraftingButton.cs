@@ -17,6 +17,14 @@ public class CraftingButton : MonoBehaviour
     //If lacks the item it adds it back
     public void Craft()
     {
+        if(SurvivalNeeds.instance.godMode)
+        {
+            InventoryManager.instance.AddItem(itemToCraft.itemToCraft);
+            craftingButton.interactable = false;
+            craftingButton.interactable = true;
+            return;
+        }
+
         int i = 0;
         foreach(CraftingRecipeItem it in itemToCraft.requiredItems)
         {

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DayNightCycle : MonoBehaviour
 {
+    public static bool bossSpawn = false;
+
     public static bool isDay = true;
 
     public Text dayText;
@@ -46,6 +48,8 @@ public class DayNightCycle : MonoBehaviour
                 dayNum++;
                 dayText.text = "Day " + dayNum;
                 nextDayAnim.Play("FadeIn");
+
+                if (dayNum >= 3) bossSpawn = true;
 
                 ObjectGeneration.instance.CreateObjects();
                 EnemySpawner.maxEnemies += 1;

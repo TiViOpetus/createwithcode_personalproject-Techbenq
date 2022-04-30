@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public int spawnDelay;
 
     public GameObject enemyPrefab;
-
+    public GameObject bossPrefab;
     private void Start()
     {
         InvokeRepeating("SummonEnemy", spawnDelay * 2, spawnDelay);
@@ -29,6 +29,12 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(enemyPrefab, spawnLocations[randomPos], enemyPrefab.transform.rotation);
                 enemyCount += 1;
             }
+        }
+
+        if (DayNightCycle.bossSpawn)
+        {
+            DayNightCycle.bossSpawn = false;
+            Instantiate(bossPrefab, bossPrefab.transform.position, enemyPrefab.transform.rotation);
         }
     }
 }

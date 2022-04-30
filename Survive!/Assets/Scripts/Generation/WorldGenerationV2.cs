@@ -133,13 +133,13 @@ public class WorldGenerationV2 : MonoBehaviour
         gameObject.AddComponent<MeshCollider>();
     }
 
+
     //Sets down campfire and player and removes the vertices near the campfire
     private void SetPlayerAndCampfire()
     {
         Vector3 campSpot = FindCampfireSpot();
         Instantiate(campfire, campSpot, campfire.transform.rotation);
         player.position = campSpot + Vector3.forward * 2;
-
 
         List<Vector3> nearCampfire = new List<Vector3>();
         foreach(Vector3 vector in availableVerts)
