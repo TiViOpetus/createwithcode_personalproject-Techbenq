@@ -51,6 +51,15 @@ public class PlayerController : MonoBehaviour
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
 
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                if (SurvivalNeeds.instance.DrainStamina(0.1f))
+                {
+                    horizontal *= 1.5f;
+                    vertical *= 1.5f;
+                }
+            }
+
             anim.SetFloat("Side", horizontal);
             anim.SetFloat("Forward", vertical);
 
@@ -88,6 +97,7 @@ public class PlayerController : MonoBehaviour
             {
                 InventoryManager.instance.activeSlot.Use();
             }
+
             if (Input.GetKeyDown(KeyCode.X))
             {
                 InventoryManager.instance.activeSlot.RemoveItem(10, true);

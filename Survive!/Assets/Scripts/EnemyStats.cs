@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyStats : Stats
 {
@@ -9,6 +10,8 @@ public class EnemyStats : Stats
     public float dropChance;
     public float attackSpeed;
 
+    public Slider healthBar;
+    public Text healthText;
 
     private void Start()
     {
@@ -25,6 +28,8 @@ public class EnemyStats : Stats
     {
         base.TakeDMG(dmg);
         currentHealth -= dmg;
+        healthBar.value = currentHealth / maxHealth;
+        healthText.text = (int)currentHealth / maxHealth * 100 + "%";
         if (currentHealth <= 0)
         {
             if(itemToDrop != null)

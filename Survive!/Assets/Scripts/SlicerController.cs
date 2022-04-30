@@ -60,7 +60,7 @@ public class SlicerController : Stats
         base.TakeDMG(dmg);
         currentHealth -= dmg;
         healthBar.value = currentHealth / maxHealth;
-        healthText.text = currentHealth / maxHealth * 100 + "%";
+        healthText.text = (int)currentHealth / maxHealth * 100 + "%";
 
         if (currentHealth <= 0)
         {

@@ -2061,7 +2061,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
-  rotateSpeed: 0.2
+  rotateSpeed: 0.15
   dayLength: 24
 --- !u!1 &658628771
 GameObject:
