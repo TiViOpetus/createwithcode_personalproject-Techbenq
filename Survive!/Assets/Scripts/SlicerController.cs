@@ -26,6 +26,7 @@ public class SlicerController : Stats
     public LayerMask groundMask;
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Human").GetComponent<Transform>();
@@ -78,7 +79,7 @@ public class SlicerController : Stats
             }
 
             EnemySpawner.enemyCount -= 1;
-            Destroy(gameObject);
+            Invoke("Remove", dmgSound.length);
         }
     }
 

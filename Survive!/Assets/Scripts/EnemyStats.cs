@@ -12,7 +12,6 @@ public class EnemyStats : Stats
 
     public Slider healthBar;
     public Text healthText;
-
     private void Start()
     {
         if(DayNightCycle.dayNum > 1)
@@ -20,6 +19,7 @@ public class EnemyStats : Stats
             currentHealth = maxHealth * DayNightCycle.dayNum / 0.75f;
             return;
         }
+        source = GetComponent<AudioSource>();
         currentHealth = maxHealth;
     }
 
@@ -46,7 +46,7 @@ public class EnemyStats : Stats
             }
 
             EnemySpawner.enemyCount -= 1;
-            Destroy(gameObject);
+            Invoke("Remove", dmgSound.length);
         }
     }
 }

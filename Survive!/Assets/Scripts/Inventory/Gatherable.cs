@@ -12,8 +12,18 @@ public class Gatherable : MonoBehaviour
     public GatherItem[] itemsWithChance;
     public int health;
 
+    public AudioClip[] audioClips;
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
     public void Gather()
     {
+        int i = Random.Range(0, audioClips.Length);
+        source.PlayOneShot(audioClips[i]);
+
         if (ToolSlot.instance.currentToolType == toolTypeNeeded)
         {
             if (ToolSlot.instance.currentToolLevel == toolLevelRequired)
@@ -37,7 +47,7 @@ public class Gatherable : MonoBehaviour
                 {
                     ObjectGeneration.instance.availableVerts.Add(transform.position);
                     ObjectGeneration.instance.prefabs[prefabIndex].amount--;
-                    Destroy(gameObject);
+                    Invoke("Remove", audioClips[i].length);
                 }
             }
 
@@ -63,10 +73,15 @@ public class Gatherable : MonoBehaviour
                 {
                     ObjectGeneration.instance.availableVerts.Add(transform.position);
                     ObjectGeneration.instance.prefabs[prefabIndex].amount--;
-                    Destroy(gameObject);
+                    Invoke("Remove", audioClips[i].length);
                 }
             }
         }
+    }
+
+    private void Remove()
+    {
+        Destroy(gameObject);
     }
 }
 

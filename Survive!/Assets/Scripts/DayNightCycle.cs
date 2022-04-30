@@ -12,6 +12,9 @@ public class DayNightCycle : MonoBehaviour
     public Text dayText;
     public Animator nextDayAnim;
 
+    public AudioSource ambientSource;
+    public AudioClip day, night;
+
     public Gradient ambient, fog, directional;
 
     public float rotateSpeed;
@@ -39,6 +42,11 @@ public class DayNightCycle : MonoBehaviour
         if (dayProcent > 0.5f)
         {
             isDay = false;
+            if (ambientSource.clip == day)
+            {
+                ambientSource.clip = night;
+                ambientSource.Play();
+            }
             nextDay = true;
         }
         else
@@ -55,6 +63,11 @@ public class DayNightCycle : MonoBehaviour
                 EnemySpawner.maxEnemies += 1;
 
                 nextDay = false;
+            }
+            if (ambientSource.clip == night)
+            {
+                ambientSource.clip = day;
+                ambientSource.Play();
             }
             isDay = true;
         }

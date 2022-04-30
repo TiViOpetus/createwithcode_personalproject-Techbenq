@@ -1974,6 +1974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayText: {fileID: 956502586}
   nextDayAnim: {fileID: 1500696861}
+  ambientSource: {fileID: 1137643890}
+  day: {fileID: 8300000, guid: bec1cfb465efc7a41bd5ccbac5b6f2a2, type: 3}
+  night: {fileID: 8300000, guid: 21538f6160ff48040a8488deb4ed6d5e, type: 3}
   ambient:
     serializedVersion: 2
     key0: {r: 0.17778796, g: 0.16789784, b: 0.7264151, a: 1}
@@ -2868,6 +2871,11 @@ RectTransform:
   m_AnchoredPosition: {x: 4.22937, y: -0.000022888184}
   m_SizeDelta: {x: -0.7275, y: 16.059}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &1137643890 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1137643890, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+  m_PrefabInstance: {fileID: 7847657077550264260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144150328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5476,13 +5484,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2137041064}
     - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
-      propertyPath: maxStamina
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 791435045, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: staminaSlid
       value: 
       objectReference: {fileID: 575531145}
+    - target: {fileID: 1137643890, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 21538f6160ff48040a8488deb4ed6d5e, type: 3}
     - target: {fileID: 468479074181287219, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: m_Name
       value: Human
@@ -5530,14 +5538,6 @@ PrefabInstance:
     - target: {fileID: 994045995630712713, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476490313268472042, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
-      propertyPath: m_Size.z
-      value: 5.450726
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476490313268472042, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}
-      propertyPath: m_Center.z
-      value: 4.5609636
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb83f9964312a5b4cb249ded9a3998a7, type: 3}

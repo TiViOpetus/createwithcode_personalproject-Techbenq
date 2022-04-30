@@ -39,6 +39,7 @@ public class SurvivalNeeds : Stats
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         currentStamina = maxStamina;
         currentHunger = maxHunger;
         currentWarmth = maxWarmth;

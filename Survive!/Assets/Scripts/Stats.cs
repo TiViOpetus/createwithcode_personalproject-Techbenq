@@ -10,6 +10,9 @@ public class Stats : MonoBehaviour
     public float currentHealth;
 
     public ParticleSystem getHit;
+
+    public AudioClip dmgSound;
+    public AudioSource source;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -17,5 +20,11 @@ public class Stats : MonoBehaviour
     public virtual void TakeDMG(float dmg)
     {
         getHit.Play();
+        source.PlayOneShot(dmgSound);
+    }
+
+    public void Remove()
+    {
+        Destroy(gameObject);
     }
 }

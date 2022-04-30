@@ -21,8 +21,11 @@ public class CampfireScript : Interactable
     public int maxSticks;
     public int burningSticks = 0;
 
+    private AudioSource source;
     private void Start()
     {
+        source = GetComponent<AudioSource>();
+
         campfireLight = GetComponentInChildren<Light>();
         foreach(GameObject stick in sticks)
         {
@@ -73,6 +76,7 @@ public class CampfireScript : Interactable
         {
             onFire = true;
 
+            source.Play();
             fireEffect.Play();
             campfireLight.intensity = 100;
             UpdateCamp();
@@ -92,6 +96,7 @@ public class CampfireScript : Interactable
         {
             CancelInvoke();
             fireEffect.Stop();
+            source.Stop();
         }
         UpdateCamp();
     }
