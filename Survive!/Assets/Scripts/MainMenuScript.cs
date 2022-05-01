@@ -7,6 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public CanvasGroup howToPlay;
 
+    //Changes the seed 
     public void ChangeSeed(string seedText)
     {
         if(seedText.Length > 0)
@@ -29,11 +30,22 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
+    
+    //starts the game
     public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
 
+
+    //Quits the game
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+
+    //shows the tutorial
     public void ShowHowToPlay()
     {
         if(howToPlay.alpha == 0)
@@ -46,6 +58,8 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
+
+    //Goes to settings
     public void GotoSettings()
     {
         SceneManager.LoadScene(2);
