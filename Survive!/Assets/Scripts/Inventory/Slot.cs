@@ -52,6 +52,7 @@ public class Slot : MonoBehaviour
             slotText.text = "";
 
             if (activeSlot) slotItem.Unactivate();
+
             slotItem = null;
             slotImage.enabled = false;
 

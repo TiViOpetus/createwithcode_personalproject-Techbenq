@@ -8,8 +8,6 @@ public class ObjectGeneration : MonoBehaviour
 
     public List<Vector3> availableVerts;
 
-    public Transform player;
-
     public Transform parent;
 
     public static ObjectGeneration instance;
@@ -65,8 +63,6 @@ public class ObjectGeneration : MonoBehaviour
     public void CreateObjects()
     {
         List<Vector3> usedVerts = new List<Vector3>();
-
-        availableVerts.Remove(player.transform.position.normalized);
 
         for (int i = 0; i < prefabs.Length; i++)
         {

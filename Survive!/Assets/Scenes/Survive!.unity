@@ -352,7 +352,7 @@ RectTransform:
   m_LocalScale: {x: 0.5999575, y: 0.5999575, z: 0.5999575}
   m_Children: []
   m_Father: {fileID: 557178601}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1422,6 +1422,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2130354383}
+  - {fileID: 1040745471}
   - {fileID: 1369754388}
   - {fileID: 100830909}
   - {fileID: 1500696858}
@@ -2866,6 +2867,7 @@ GameObject:
   - component: {fileID: 1040745473}
   - component: {fileID: 1040745472}
   - component: {fileID: 1040745474}
+  - component: {fileID: 1040745475}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -2886,12 +2888,12 @@ RectTransform:
   m_Children:
   - {fileID: 1844120064}
   - {fileID: 427102256}
-  m_Father: {fileID: 1369754388}
-  m_RootOrder: 4
+  m_Father: {fileID: 557178601}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -1604.434, y: 0}
+  m_AnchoredPosition: {x: 214.49902, y: 40.999992}
   m_SizeDelta: {x: 378.868, y: 782.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040745472
@@ -2947,6 +2949,18 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 6289a342239fe8245a183f5dd269c110, type: 2}
   volumeText: {fileID: 327926741}
   volumeSlider: {fileID: 1844120065}
+--- !u!225 &1040745475
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040745470}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1223888110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,9 +3481,8 @@ RectTransform:
   - {fileID: 793908733}
   - {fileID: 703051118}
   - {fileID: 1905776697}
-  - {fileID: 1040745471}
   m_Father: {fileID: 557178601}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -3807,7 +3820,7 @@ RectTransform:
   m_Children:
   - {fileID: 956502585}
   m_Father: {fileID: 557178601}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4939,7 +4952,6 @@ MonoBehaviour:
     amount: 0
     maxAmount: 0
   availableVerts: []
-  player: {fileID: 0}
   parent: {fileID: 456370938}
 --- !u!23 &2027997536
 MeshRenderer:
@@ -5195,4 +5207,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingMenu: {fileID: 1369754391}
+  menu: {fileID: 1040745475}
   activeSlot: {fileID: 0}

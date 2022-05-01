@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
 {
     private Slot[] slots;
 
-    public CanvasGroup craftingMenu;
+    public CanvasGroup craftingMenu, menu;
 
     public Slot activeSlot;
 
@@ -97,10 +97,12 @@ public class InventoryManager : MonoBehaviour
         if(toggle)
         {
             craftingMenu.alpha = 1;
+            menu.alpha = 1;
         }
         else
         {
             craftingMenu.alpha = 0;
+            menu.alpha = 0;
         }
         foreach (Button bt in craftingButtons)
         {

@@ -65,7 +65,7 @@ public class CampfireScript : Interactable
         if(InventoryManager.instance.activeSlot.slotItem == stickItem)
         {
             if(AddStick())
-                InventoryManager.instance.activeSlot.RemoveItem(1);
+                InventoryManager.instance.activeSlot.RemoveItem(1, true);
         }
     }
 
