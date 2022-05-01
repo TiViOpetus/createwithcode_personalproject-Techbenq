@@ -45,4 +45,9 @@ public class MainMenuScript : MonoBehaviour
             howToPlay.alpha = 0;
         }
     }
+
+    public void GotoSettings()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

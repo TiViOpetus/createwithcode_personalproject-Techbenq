@@ -18,7 +18,7 @@ public class WorldGenerationV2 : MonoBehaviour
     public Gradient groundGradient;
 
     public GameObject campfire;
-    public Transform player;
+    public GameObject player;
 
     private List<Vector3> availableVerts = new List<Vector3>();
 
@@ -139,7 +139,7 @@ public class WorldGenerationV2 : MonoBehaviour
     {
         Vector3 campSpot = FindCampfireSpot();
         Instantiate(campfire, campSpot, campfire.transform.rotation);
-        player.position = campSpot + Vector3.forward * 2;
+        Instantiate(player,campSpot + Vector3.forward * 2, player.transform.rotation).name = "Human";
 
         List<Vector3> nearCampfire = new List<Vector3>();
         foreach(Vector3 vector in availableVerts)
