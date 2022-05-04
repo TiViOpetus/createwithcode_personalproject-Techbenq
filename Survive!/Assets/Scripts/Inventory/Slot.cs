@@ -45,6 +45,7 @@ public class Slot : MonoBehaviour
     //Returns 0 if given amount is removed
     public int RemoveItem(int amount, bool activeSlot = false)
     {
+        if (itemAmount <= 0) return 0;
         if(itemAmount <= amount)
         {
             int i = itemAmount;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SurvivalNeeds : Stats
 {
@@ -63,7 +64,7 @@ public class SurvivalNeeds : Stats
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(0);
         }
     }
 
