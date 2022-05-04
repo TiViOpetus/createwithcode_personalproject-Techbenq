@@ -22,11 +22,15 @@ public class SurvivalNeeds : Stats
 
     public float coldRate;
     public float hungerRate;
+    public float regenRate;
     public float staminaCd;
+    public float regenCd;
 
     private float currentStamina;
     private float currentHunger;
     private float currentWarmth;
+
+    private bool canRegen = true;
 
     private bool alive = true;
 
@@ -58,6 +62,9 @@ public class SurvivalNeeds : Stats
         if (godMode || rolling)
             return;
 
+        canRegen = false;
+        StartCoroutine(AllowRegen());
+
         base.TakeDMG(dmg);
         currentHealth -= dmg;
         healthSlid.value = currentHealth / maxHealth;
@@ -66,6 +73,25 @@ public class SurvivalNeeds : Stats
         {
             SceneManager.LoadScene(0);
         }
+    }
+
+    private IEnumerator Regen()
+    {
+        while (canRegen)
+        {
+            yield return new WaitForSeconds(regenRate);
+            currentHealth += maxHealth * 0.02f;
+            healthSlid.value = currentHealth / maxHealth;
+
+            if (currentHealth >= maxHealth) canRegen = false;
+        }
+    }
+
+    private IEnumerator AllowRegen()
+    {
+        yield return new WaitForSeconds(regenCd);
+        canRegen = true;
+        StartCoroutine(Regen());
     }
 
 

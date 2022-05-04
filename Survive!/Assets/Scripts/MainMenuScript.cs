@@ -8,6 +8,12 @@ public class MainMenuScript : MonoBehaviour
     public CanvasGroup howToPlay;
 
     //Changes the seed 
+
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void ChangeSeed(string seedText)
     {
         if(seedText.Length > 0)
