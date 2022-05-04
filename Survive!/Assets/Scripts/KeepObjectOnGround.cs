@@ -48,7 +48,7 @@ public class KeepObjectOnGround : MonoBehaviour
     {
         if (canPlace)
         {
-            Instantiate(preFab, transform.position, transform.rotation);
+            Instantiate(preFab, transform.position, transform.rotation).transform.localScale = preFab.transform.localScale;
             return true;
         }
         return false;
@@ -66,6 +66,13 @@ public class KeepObjectOnGround : MonoBehaviour
     //if object is inside some other collider it cant be placed
     private void OnTriggerStay(Collider other)
     {
+        if (other.CompareTag("Campfire"))
+        {
+            canPlace = true;
+            meshRenderer.material.color = Color.white;
+            return;
+        }
+
         canPlace = false;
         meshRenderer.material.color = Color.red;
     }
