@@ -16,11 +16,14 @@ public class EnemyStats : Stats
     {
         if(DayNightCycle.dayNum > 1)
         {
-            currentHealth = maxHealth * DayNightCycle.dayNum / 0.75f;
+            maxHealth = maxHealth * DayNightCycle.dayNum / 0.7f;
             return;
         }
         source = GetComponent<AudioSource>();
         currentHealth = maxHealth;
+
+        healthBar.maxValue = maxHealth;
+        healthBar.value = currentHealth;
     }
 
     //Takes damage and rolls for item drop when dies
@@ -28,7 +31,7 @@ public class EnemyStats : Stats
     {
         base.TakeDMG(dmg);
         currentHealth -= dmg;
-        healthBar.value = currentHealth / maxHealth;
+        healthBar.value = currentHealth;
         healthText.text = (int)currentHealth / maxHealth * 100 + "%";
         if (currentHealth <= 0)
         {

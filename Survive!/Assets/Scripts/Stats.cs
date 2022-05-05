@@ -13,10 +13,6 @@ public class Stats : MonoBehaviour
 
     public AudioClip dmgSound;
     public AudioSource source;
-    private void Start()
-    {
-        currentHealth = maxHealth;
-    }
     public virtual void TakeDMG(float dmg)
     {
         getHit.Play();

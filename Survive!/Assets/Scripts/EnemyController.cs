@@ -64,8 +64,17 @@ public class EnemyController : MonoBehaviour
         if (canAttack)
         {
             anim.SetTrigger("Attack");
-            canAttack = false;
             Invoke("AllowAttack", stats.attackSpeed);
+            canAttack = false;
+        }
+    }
+
+    public void CancelAttack()
+    {
+        if (!canAttack)
+        {
+            anim.SetTrigger("Cancel");
+            canAttack = true;
         }
     }
 

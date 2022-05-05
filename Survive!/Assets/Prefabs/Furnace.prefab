@@ -4919,7 +4919,7 @@ MonoBehaviour:
   - {fileID: 603605071399106430}
   - {fileID: 6415193917575664346}
   - {fileID: 5404638028440928908}
-  burnDelay: 10
+  burnDelay: 20
   minInner: 20
   maxInner: 40
   minOuter: 60

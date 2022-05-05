@@ -622,7 +622,7 @@ MonoBehaviour:
   currentHealth: 20
   getHit: {fileID: 4045436073628827455}
   dmgSound: {fileID: 8300000, guid: 5f81bdff582c2fc4488e1129bc037245, type: 3}
-  source: {fileID: 0}
+  source: {fileID: 203743441}
   rolling: 0
   torchActive: 0
   godMode: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   hungerRate: 0.25
   regenRate: 0.3
   staminaCd: 1
-  regenCd: 7
+  regenCd: 12
   staminaSlid: {fileID: 3744965765113830334}
   healthSlid: {fileID: 561610417619279978}
   hungerSlid: {fileID: 2107719572592706810}

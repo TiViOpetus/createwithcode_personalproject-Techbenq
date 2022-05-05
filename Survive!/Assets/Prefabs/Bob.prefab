@@ -371,7 +371,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: ???
+  m_Text: Bob
 --- !u!1 &739977461624840282
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 7294979447598909197}
   - component: {fileID: -8246149593645001857}
   m_Layer: 0
-  m_Name: Slicer
+  m_Name: Bob
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,7 +966,7 @@ MonoBehaviour:
   currentHealth: 100
   getHit: {fileID: 2870719959740545065}
   dmgSound: {fileID: 8300000, guid: 5f81bdff582c2fc4488e1129bc037245, type: 3}
-  source: {fileID: 0}
+  source: {fileID: -8246149593645001857}
   itemToDrop: {fileID: 739977461624840282}
   dropChance: 0
   healthBar: {fileID: 7190666837814643186}

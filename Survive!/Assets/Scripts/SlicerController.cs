@@ -26,6 +26,7 @@ public class SlicerController : Stats
     public LayerMask groundMask;
     private void Start()
     {
+        currentHealth = maxHealth;
         source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();

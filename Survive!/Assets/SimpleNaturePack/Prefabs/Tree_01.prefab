@@ -134,7 +134,7 @@ MonoBehaviour:
   itemsWithChance:
   - item: {fileID: 11400000, guid: d5779f11ecd4ac54dbb01725a83d4cd2, type: 2}
     dropChance: 20
-  health: 4
+  health: 6
   audioClips:
   - {fileID: 8300000, guid: 3701591439d62044eb2ec54a4a8ad4d5, type: 3}
 --- !u!82 &7654466500027612253
@@ -150,7 +150,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 0.2
+  m_Pitch: 0.1
   Loop: 0
   Mute: 0
   Spatialize: 0
