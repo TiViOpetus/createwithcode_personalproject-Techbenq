@@ -63,6 +63,8 @@ public class SurvivalNeeds : Stats
             return;
 
         canRegen = false;
+        StopCoroutine(AllowRegen());
+        StopCoroutine(Regen());
         StartCoroutine(AllowRegen());
 
         base.TakeDMG(dmg);
