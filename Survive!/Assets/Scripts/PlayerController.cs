@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!controller.isGrounded)
+        {
+            controller.Move(Vector3.down * Time.deltaTime * speed * 2);
+        }
+
         if (canMove)
         {
             horizontal = Input.GetAxis("Horizontal");
@@ -147,16 +152,17 @@ public class PlayerController : MonoBehaviour
     // Turns the player with mouse smoothly
     private void LateUpdate()
     {
-        if (!controller.isGrounded)
+        if (Cursor.visible)
         {
-            controller.Move(Vector3.down * Time.deltaTime * speed * 2);
+            anim.SetFloat("TurnSpeed", 0);
+            return;
         }
 
         mouseX += Input.GetAxis("Mouse X");
         Quaternion turn = Quaternion.Euler(0, mouseX, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, turn, 4 * Time.deltaTime);
 
-        turnSpeed = Mathf.Lerp(turnSpeed, Input.GetAxis("Mouse X"), 2 * Time.deltaTime);
+        turnSpeed = Mathf.Lerp(turnSpeed, Input.GetAxis("Mouse X"), 3 * Time.deltaTime);
         turnSpeed = Mathf.Clamp(turnSpeed, -1, 1);
 
         anim.SetFloat("TurnSpeed", turnSpeed);

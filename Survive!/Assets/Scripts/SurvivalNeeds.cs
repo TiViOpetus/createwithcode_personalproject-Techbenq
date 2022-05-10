@@ -187,7 +187,7 @@ public class SurvivalNeeds : Stats
     {
         if(currentStamina < 100)
         {
-            currentStamina += maxStamina * 0.05f;
+            currentStamina += maxStamina * 0.025f;
             currentStamina = Mathf.Clamp(currentStamina, 0, 100);
             staminaSlid.value = currentStamina / maxStamina;
             GetHungry();
