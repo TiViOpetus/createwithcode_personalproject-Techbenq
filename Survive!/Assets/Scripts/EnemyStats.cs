@@ -17,7 +17,6 @@ public class EnemyStats : Stats
         if(DayNightCycle.dayNum > 1)
         {
             maxHealth = maxHealth * DayNightCycle.dayNum / 0.7f;
-            return;
         }
         source = GetComponent<AudioSource>();
         currentHealth = maxHealth;
