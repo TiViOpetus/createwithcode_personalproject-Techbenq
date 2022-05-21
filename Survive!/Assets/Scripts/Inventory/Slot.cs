@@ -71,11 +71,43 @@ public class Slot : MonoBehaviour
     {
         if(slotItem != null)
         {
+            if(slotItem is PlaceableItem)
+            {
+                PlayerController.instance.Interact(1);
+                StartCoroutine(RemoveItem(true));
+                return;
+            }
+
+            if (slotItem.Use())
+            {
+                if(slotItem is EatAble)
+                {
+                    StartCoroutine(RemoveItem());
+                }
+                else
+                {
+                    RemoveItem(1);
+                    if (itemAmount <= 0) ToolSlot.instance.RemoveTool();
+                }
+            }
+        }
+    }
+    private IEnumerator RemoveItem(bool place = false)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        if (place)
+        {
             if (slotItem.Use())
             {
                 RemoveItem(1);
                 if (itemAmount <= 0) ToolSlot.instance.RemoveTool();
             }
+        }
+        else
+        {
+            RemoveItem(1);
+            if (itemAmount <= 0) ToolSlot.instance.RemoveTool();
         }
     }
 }

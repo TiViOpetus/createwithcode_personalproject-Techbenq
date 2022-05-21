@@ -1439,7 +1439,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutions: {fileID: 2111654793}
-  fullScreen: 1
+  qualityDropDown: {fileID: 17986351}
+  fullScreenToggle: {fileID: 545371226}
   mixer: {fileID: 24100000, guid: 6289a342239fe8245a183f5dd269c110, type: 2}
   audioText: {fileID: 1391298716}
 --- !u!1 &939894188

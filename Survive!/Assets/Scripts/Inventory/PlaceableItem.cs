@@ -11,7 +11,6 @@ public class PlaceableItem : Item
     {
         if (KeepObjectOnGround.instance.SetOnGround(itemPrefab))
         {
-            PlayerController.instance.Interact(1);
             if(InventoryManager.instance.activeSlot.itemAmount <= 1)
             {
                 Unactivate();

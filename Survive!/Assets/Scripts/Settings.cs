@@ -8,7 +8,9 @@ using UnityEngine.Audio;
 public class Settings : MonoBehaviour
 {
     public Dropdown resolutions;
-    public bool fullScreen = true;
+    public Dropdown qualityDropDown;
+    public static bool fullScreen;
+    public Toggle fullScreenToggle;
     public AudioMixer mixer;
     public Text audioText;
 
@@ -16,6 +18,10 @@ public class Settings : MonoBehaviour
     private List<Resolution> goodResolutions = new List<Resolution>();
     private void Start()
     {
+        fullScreen = Screen.fullScreen;
+        fullScreenToggle.isOn = fullScreen;
+
+        qualityDropDown.value = QualitySettings.GetQualityLevel();
         SetResolutions();
     }
 

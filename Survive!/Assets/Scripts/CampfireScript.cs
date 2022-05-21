@@ -107,6 +107,7 @@ public class CampfireScript : Interactable
         if (burningSticks >= maxSticks)
             return false;
 
+        PlayerController.instance.Interact(2);
         burningSticks += 1;
         UpdateCamp();
 
