@@ -12,6 +12,7 @@ public class EatAble : Item
     public override bool Use()
     {
         base.Use();
+        PlayerController.instance.Interact(0);
 
         SurvivalNeeds.instance.Eat(hungerValue);
         return true;

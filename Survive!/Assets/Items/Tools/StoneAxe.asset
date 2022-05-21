@@ -15,7 +15,7 @@ MonoBehaviour:
   itemLogo: {fileID: 21300000, guid: b81cd050e7e80ad4ba76e42e7fc70161, type: 3}
   itemName: Stone Axe
   maxStack: 1
-  size: 1
+  size: 0.7
   itemMesh: {fileID: 7053128779965063925, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}
   itemMaterials:
   - {fileID: 3349481329647215731, guid: c1f31ae04961a60449630fce7569a4b4, type: 3}

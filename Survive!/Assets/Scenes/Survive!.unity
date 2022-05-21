@@ -1913,7 +1913,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
-  rotateSpeed: 0.14
+  rotateSpeed: 0.13
   dayLength: 24
 --- !u!82 &638214214
 AudioSource:

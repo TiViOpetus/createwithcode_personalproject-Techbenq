@@ -15,7 +15,7 @@ MonoBehaviour:
   itemLogo: {fileID: 21300000, guid: 81c36a457ce108b47b373c73f76246e1, type: 3}
   itemName: Wall
   maxStack: 2
-  size: 0.01
+  size: 0.1
   itemMesh: {fileID: 8733429697405204941, guid: 1686c889e340d53419bb84f161baa4b4, type: 3}
   itemMaterials:
   - {fileID: -876546973899608171, guid: 1686c889e340d53419bb84f161baa4b4, type: 3}

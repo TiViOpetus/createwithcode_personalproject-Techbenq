@@ -18,6 +18,8 @@ public class PickUp : Interactable
         base.Interact();
         if (InventoryManager.instance.AddItem(item))
         {
+            PlayerController.instance.Interact(2);
+
             if (naturalResource)
             {
                 ObjectGeneration.instance.availableVerts.Add(transform.position);

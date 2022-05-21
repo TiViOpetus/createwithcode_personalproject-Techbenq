@@ -168,6 +168,33 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("TurnSpeed", turnSpeed);
     }
 
+
+    //Plays the animation for the interaction
+    public void Interact(int interactIndex)
+    {
+        switch (interactIndex)
+        {
+            case 0:
+                anim.Play("Eat", 1);
+                break;
+
+            case 1:
+                anim.Play("Place", 1);
+                break;
+
+
+            case 2:
+                anim.Play("PickUp", 1);
+                break;
+        }
+
+        canRoll = false;
+        canPunch = false;
+
+        Invoke("allowPunch", 0.7f);
+        Invoke("AllowRoll", 0.7f);
+    }
+
     //allows punching this gets called in animation
     private void allowPunch()
     {

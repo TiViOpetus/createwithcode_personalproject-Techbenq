@@ -15,7 +15,7 @@ MonoBehaviour:
   itemLogo: {fileID: 21300000, guid: 51305c59a383d184fb4ea78b648223a4, type: 3}
   itemName: Furnace
   maxStack: 1
-  size: 0.025
+  size: 0.25
   itemMesh: {fileID: -5242391522756403421, guid: 519a5c30307e0434cb44f66a002cc31b, type: 3}
   itemMaterials:
   - {fileID: -4344725196833365262, guid: 519a5c30307e0434cb44f66a002cc31b, type: 3}
