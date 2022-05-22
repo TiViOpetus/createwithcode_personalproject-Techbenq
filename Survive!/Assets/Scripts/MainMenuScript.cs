@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class MainMenuScript : MonoBehaviour
     {
         if(howToPlay.alpha == 0)
         {
+            Analytics.CustomEvent("Tutorial_Button");
             howToPlay.alpha = 1;
         }
         else

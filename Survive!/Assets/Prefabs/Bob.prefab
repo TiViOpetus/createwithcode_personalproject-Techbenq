@@ -6529,7 +6529,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 5988347114677481029, guid: 8170c2b6706860842959d6f6d7033d76, type: 3}

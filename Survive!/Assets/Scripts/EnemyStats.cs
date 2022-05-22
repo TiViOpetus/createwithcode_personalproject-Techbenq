@@ -16,13 +16,13 @@ public class EnemyStats : Stats
     {
         if(DayNightCycle.dayNum > 1)
         {
-            maxHealth = maxHealth * DayNightCycle.dayNum / 0.7f;
+            maxHealth = maxHealth * DayNightCycle.dayNum * 0.7f;
         }
         source = GetComponent<AudioSource>();
         currentHealth = maxHealth;
 
         healthBar.maxValue = maxHealth;
-        healthBar.value = currentHealth;
+        healthBar.value = (int)currentHealth;
     }
 
     //Takes damage and rolls for item drop when dies

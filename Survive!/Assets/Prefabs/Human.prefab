@@ -633,9 +633,9 @@ MonoBehaviour:
   coldDmg: 2
   coldRate: 0.15
   hungerRate: 0.25
-  regenRate: 0.3
+  regenRate: 1
   staminaCd: 2
-  regenCd: 15
+  regenCd: 20
   staminaSlid: {fileID: 3744965765113830334}
   healthSlid: {fileID: 561610417619279978}
   hungerSlid: {fileID: 2107719572592706810}
