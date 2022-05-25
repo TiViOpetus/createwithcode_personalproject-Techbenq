@@ -29,6 +29,8 @@ public class DayNightCycle : MonoBehaviour
     private Light directionalLight;
     private void Start()
     {
+        dayNum = 1;
+        bossSpawn = false;
         directionalLight = GetComponent<Light>();
     }
 
@@ -57,7 +59,10 @@ public class DayNightCycle : MonoBehaviour
                 dayText.text = "Day " + dayNum;
                 nextDayAnim.Play("FadeIn");
 
-                if (dayNum >= 3) bossSpawn = true;
+                if (dayNum % 3 == 0)
+                {
+                    bossSpawn = true;
+                }
 
                 ObjectGeneration.instance.CreateObjects();
                 EnemySpawner.maxEnemies += 1;

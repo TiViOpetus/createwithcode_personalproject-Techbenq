@@ -31,7 +31,7 @@ public class EnemyStats : Stats
         base.TakeDMG(dmg);
         currentHealth -= dmg;
         healthBar.value = currentHealth;
-        healthText.text = (int)currentHealth / maxHealth * 100 + "%";
+        healthText.text = (int)(currentHealth / maxHealth * 100) + "%";
         if (currentHealth <= 0)
         {
             if(itemToDrop != null)
